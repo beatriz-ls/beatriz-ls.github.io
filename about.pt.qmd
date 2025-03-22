@@ -7,7 +7,7 @@ title-block-banner: true
 
 ## {{< fa graduation-cap title="a graduation cap" >}} Ciência de dados e eu
 
-Como estudante de Estatística na Universidade Federal do Espírito Santo, desenvolvi habilidades sólidas em manipulação, modelagem e interpretação de dados em diversos domínios. Atualmente, estou focada na visualização de dados de saúde materno fetal como parte do meu trabalho no [Observatório Obstétrico Brasileiro](https://observatorioobstetricobr.org/) desenvolvido pelo [Daslab](https://daslab-ufes.github.io/). Estou ativamente envolvida com o grupo [R-Ladies Vix](https://rladies.org/), que promove a diversidade de gênero na comunidade R.
+Como estudante de Estatística na Universidade Federal do Espírito Santo, desenvolvi habilidades sólidas em manipulação, modelagem e interpretação de dados em diversos domínios. Atualmente, estou focada na visualização de dados de saúde materno fetal como parte do meu trabalho no [Observatório Obstétrico Brasileiro](https://observatorioobstetricobr.org/) desenvolvido pelo [Daslab](https://daslab-ufes.github.io/). Participo da comissão organizadora da 69ª Reunião Anual da Região Brasileira da Sociedade Internacional de Biometria (RBras) e do 21º Simpósio de Estatística Aplicada à Experimentação Agronômica (SEAGRO) que ocorrerá na Universidade Federal do Espirito Santo, em Vitória, de 4 a 8 de agosto de 2025. Estou ativamente envolvida com o grupo [R-Ladies Vix](https://rladies.org/), que promove a diversidade de gênero na comunidade R. 
 
 Sou naturalmente curiosa e acredito que meu constante desejo de entender o mundo ao meu redor foi o que me atraiu para essa profissão.
 
@@ -31,7 +31,7 @@ Para saber mais sobre os projetos nos quais estou envolvida, visite os seguintes
 :::
 
 ::: column
-[<img src="images/Rbras_2025_logo.png" alt="Logo do RBras" class="rbras_logo"/>](https://www.rbras.org.br/)
+[<img src="images/Rbras_2025_logo.png" alt="Logo do RBras" class="rbras_logo"/>](https://69rbras21seagro.com.br/)
 :::
 :::
 
@@ -77,6 +77,9 @@ Para saber mais sobre os projetos nos quais estou envolvida, visite os seguintes
 -   Análise de Regressão
 -   Análise de Sobrevivência
 -   Modelos Lineares Generalizados
+-   Planejamento de Experimentos
+-   Análise de Séries Temporais
+-   Inferência Bayesiana
 :::
 
 ::: column
@@ -86,6 +89,7 @@ Para saber mais sobre os projetos nos quais estou envolvida, visite os seguintes
 -   Pesquisa Operacional
 -   Processos Estocásticos
 -   Algoritmos de busca bioinspirados
+-   Métodos de Amostragem
 :::
 :::
 

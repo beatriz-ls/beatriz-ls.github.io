@@ -7,7 +7,8 @@ title-block-banner: true
 
 ## {{< fa graduation-cap title="a graduation cap" >}} Data science and me
 
-As a Statistics student at Universidade Federal do Espirito Santo, I have developed strong skills in manipulation, modeling, and interpretation of data across various domains. Currently, I am focused on visualizing public health data related to pregnant women as part of my work at the [Observatório Obstétrico Brasileiro](https://observatorioobstetricobr.org/) developed by [Daslab](https://daslab-ufes.github.io/). I'm actively involved with the [R-Ladies Vix](https://rladies.org/), a group dedicated in promotes gender diversity in the R community.
+As a Statistics student at Universidade Federal do Espirito Santo, I have developed strong skills in manipulation, modeling, and interpretation of data across various domains. Currently, I am focused on visualizing public health data related to pregnant women as part of my work at the [Observatório Obstétrico Brasileiro](https://observatorioobstetricobr.org/) developed by [Daslab](https://daslab-ufes.github.io/). I'm part of the organization team of the 69th Annual Meeting of the Brazilian Region of the International Biometric Society (RBras) and the 21st Symposium on Statistics Applied to Agricultural Experimentation (SEAGRO) will be held at the Federal University of Espírito Santo (UFES) , in Vitória, Espírito Santo, from August 4 to 8, 2025. 
+I'm actively involved with the [R-Ladies Vix](https://rladies.org/), a group dedicated in promotes gender diversity in the R community.
 
 I'm naturally curious, and I believe my constant desire to understand the world around me is what drew me to this profession.
 
@@ -31,7 +32,7 @@ To learn more about the projects I am involved in, please visit the following la
 :::
 
 ::: column
-[<img src="images/Rbras_2025_logo.png" alt="RBras Logo" class="rbras_logo"/>](https://www.rbras.org.br/)
+[<img src="images/Rbras_2025_logo.png" alt="RBras Logo" class="rbras_logo"/>](https://69rbras21seagro.com.br/)
 :::
 :::
 
@@ -77,6 +78,10 @@ To learn more about the projects I am involved in, please visit the following la
 -   Regression Analysis
 -   Survival Analysis
 -   Generalized Linear Models
+-   Design of Experiments
+-   Time Series Analysis
+-   Bayesian Inference
+-   Sampling Methods
 :::
 
 ::: column
