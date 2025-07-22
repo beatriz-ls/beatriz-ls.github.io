@@ -1,10 +1,24 @@
 [
   {
-    "objectID": "portfolio_projects/post-with-code/index.html",
-    "href": "portfolio_projects/post-with-code/index.html",
-    "title": "Poste",
+    "objectID": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html",
+    "href": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html",
+    "title": "Painel de Vigilância da Saúde Materna e Perinatal",
     "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+    "text": "Acesse o painel aqui"
+  },
+  {
+    "objectID": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html#descrição",
+    "href": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html#descrição",
+    "title": "Painel de Vigilância da Saúde Materna e Perinatal",
+    "section": "Descrição",
+    "text": "Descrição\nA morte materna – morte de uma mulher durante a gestação, parto ou até 42 dias após o término da gestação – não é um evento isolado. Ela é o resultado de uma série de determinantes sociais em saúde que atuam durante a vida de uma mulher. Da mesma forma, desfechos perinatais dependem da saúde materna e da assistência à mulher durante o pré-natal e o parto, além da adequada assistência ao bebê após o nascimento.\nNeste painel, você encontrará um conjunto de indicadores que expressam a vulnerabilidade das mulheres ao óbito materno, seja por suas condições socioeconômicas, por sua raça/cor ou pela atenção à saúde recebida ao longo da sua vida reprodutiva. Encontrará também indicadores relacionados aos desfechos perinatais, determinados em grande parte pela atenção de saúde durante a gestação e o parto.\nOs indicadores estão disponíveis para municípios, estados, regiões de saúde e país e foram calculados a partir de vários sistemas de informação brasileiros (SINASC, SIM, SINAN, SIH, SIAB, ANS e estimativas populacionais). O painel contém indicadores a partir do ano 2012 e será atualizado anualmente. Para anos com as bases ainda não finalizadas pelo Ministério da Saúde, esses dados estarão identificados como “preliminares”.\nOs indicadores têm fácil visualização e podem ser explorados pelos gestores de saúde para identificar áreas prioritárias para investimento em seu município/estado. Para auxiliar na interpretação dos indicadores, são apresentados valores de referência, que podem ser metas nacionais ou internacionais, recomendações da Organização Mundial da Saúde, valores observados em países desenvolvidos ou a média nacional.\nO painel está organizado em três níveis:\n\nResumo dos blocos de indicadores: nesse nível, são mostrados todos os indicadores, de todos os blocos, em uma única tela, para o ano e região geográfica selecionados. Um relatório com o resumo dos indicadores está disponível para impressão;\nSéries históricas: nesse nível, é mostrada a evolução dos indicadores de cada bloco para a localidade e período de tempo selecionados, sendo possível a comparação entre localidades, situando o município/estado/região no cenário nacional;\nVisão detalhada dos indicadores: nesse nível, cada indicador pode ser visualizado individualmente e comparado a outras localidades. Deve-se primeiro selecionar o bloco ao qual o indicador pertence e depois o indicador escolhido. Além das visualizações, a documentação de cada indicador é apresentada de forma resumida: sua definição, a fonte dos dados, o método de cálculo e informações sobre a qualidade da informação são apresentados.\n\nAlém disso, também estão disponíveis:\n\nDocumentação dos indicadores: nesse menu, disponibilizamos um documento para impressão, contendo a documentação completa de todos os indicadores do painel;\nA história da Aparecida: nesse menu, disponibilizamos um link para a “História de Aparecida”, onde mostramos os indicadores apresentados neste painel em diferentes contextos e em como eles refletem as situações de vulnerabilidade da mulher ao óbito materno, permitindo maior conhecimento sobre a morte materna e seus determinantes."
+  },
+  {
+    "objectID": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html#desenvolvimento",
+    "href": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html#desenvolvimento",
+    "title": "Painel de Vigilância da Saúde Materna e Perinatal",
+    "section": "Desenvolvimento",
+    "text": "Desenvolvimento\nEste painel foi desenvolvido utilizando ferramentas de análise e visualização de dados, garantindo acessibilidade e interatividade para diferentes perfis de usuários, principalmente gestores e profissionais da saúde.\nA plataforma foi construída com a linguagem R, utilizando o pacote Shiny, que permite a criação de aplicações web dinâmicas e responsivas, facilitando a exploração e análise dos dados em tempo real. Para a manipulação, limpeza e análise dos dados, foram aplicadas bibliotecas do {tidyverse}, tais como {dplyr} e {tidyr}.\nO projeto contou com a colaboração de uma equipe de acadêmicos do Observatório Obstétrico Brasileiro. Destacam-se as contribuições de:\n\nAgatha Sacramento Rodrigues – Coordenação\nRafael Sant’Ana, Esley Caminhas, Samuel Meideiros, Mariana Costa, Pedro Brito – Desenvolvimento de interface, visualização de dados, revisão e validação dos indicadores\n\nAlém disso, o projeto foi realizado em parceria com órgãos públicos e instituições de referência na área de saúde pública, incluindo:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA integração dos dados utilizados no painel foi possível graças à disponibilização pública dos sistemas de informação nacionais (SINASC, SIM, SINAN, SIH, SIAB, ANS), complementados por estimativas populacionais oficiais.\nO painel é mantido e atualizado pela equipe do Observatório Obstétrico, com atualizações anuais para incorporar os dados mais recentes e aprimorar a experiência do usuário, visando sempre contribuir para a melhoria das políticas públicas voltadas à saúde materna e perinatal no Brasil."
   },
   {
     "objectID": "index.html",
@@ -18,7 +32,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Como eu criei meu website usando Quarto\n\n\n\n\n\n\n\n\n\n\n\n\n4 de ago. de 2024\n\n\nBeatriz Lima Silveira\n\n\n\n\n\n\nNenhum item correspondente"
+    "text": "Como eu criei meu website usando Quarto\n\n\n\n\n\n\n\n\n4 de ago. de 2024\n\n\nBeatriz Lima Silveira\n\n\n\n\n\nNenhum item correspondente"
   },
   {
     "objectID": "about.html",
@@ -28,36 +42,36 @@
     "text": "Como estudante de Estatística na Universidade Federal do Espírito Santo, desenvolvi habilidades sólidas em manipulação, modelagem e interpretação de dados em diversos domínios. Atualmente, estou focada na visualização de dados de saúde materno fetal como parte do meu trabalho no Observatório Obstétrico Brasileiro desenvolvido pelo Daslab. Participo da comissão organizadora da 69ª Reunião Anual da Região Brasileira da Sociedade Internacional de Biometria (RBras) e do 21º Simpósio de Estatística Aplicada à Experimentação Agronômica (SEAGRO) que ocorrerá na Universidade Federal do Espirito Santo, em Vitória, de 4 a 8 de agosto de 2025. Estou ativamente envolvida com o grupo R-Ladies Vix, que promove a diversidade de gênero na comunidade R.\nSou naturalmente curiosa e acredito que meu constante desejo de entender o mundo ao meu redor foi o que me atraiu para essa profissão.\nAlém de estudar teorias estatísticas e modelagem, também estou aprendendo HTML e CSS para aprimorar a qualidade estética dos meus relatórios interativos e painéis de visualização.\nPara saber mais sobre os projetos nos quais estou envolvida, visite os seguintes sites de laboratórios/organizações:"
   },
   {
-    "objectID": "about.html#fa-graduation-cap-titlea-graduation-cap-ciência-de-dados-e-eu",
-    "href": "about.html#fa-graduation-cap-titlea-graduation-cap-ciência-de-dados-e-eu",
+    "objectID": "about.html#ciência-de-dados-e-eu",
+    "href": "about.html#ciência-de-dados-e-eu",
     "title": "Sobre Mim",
     "section": "",
     "text": "Como estudante de Estatística na Universidade Federal do Espírito Santo, desenvolvi habilidades sólidas em manipulação, modelagem e interpretação de dados em diversos domínios. Atualmente, estou focada na visualização de dados de saúde materno fetal como parte do meu trabalho no Observatório Obstétrico Brasileiro desenvolvido pelo Daslab. Participo da comissão organizadora da 69ª Reunião Anual da Região Brasileira da Sociedade Internacional de Biometria (RBras) e do 21º Simpósio de Estatística Aplicada à Experimentação Agronômica (SEAGRO) que ocorrerá na Universidade Federal do Espirito Santo, em Vitória, de 4 a 8 de agosto de 2025. Estou ativamente envolvida com o grupo R-Ladies Vix, que promove a diversidade de gênero na comunidade R.\nSou naturalmente curiosa e acredito que meu constante desejo de entender o mundo ao meu redor foi o que me atraiu para essa profissão.\nAlém de estudar teorias estatísticas e modelagem, também estou aprendendo HTML e CSS para aprimorar a qualidade estética dos meus relatórios interativos e painéis de visualização.\nPara saber mais sobre os projetos nos quais estou envolvida, visite os seguintes sites de laboratórios/organizações:"
   },
   {
-    "objectID": "about.html#fa-laptop-titlea-laptop-ferramentas",
-    "href": "about.html#fa-laptop-titlea-laptop-ferramentas",
+    "objectID": "about.html#ferramentas",
+    "href": "about.html#ferramentas",
     "title": "Sobre Mim",
     "section": " Ferramentas",
     "text": "Ferramentas"
   },
   {
-    "objectID": "about.html#fa-book-open-titlea-book-áreas-de-conhecimento",
-    "href": "about.html#fa-book-open-titlea-book-áreas-de-conhecimento",
+    "objectID": "about.html#áreas-de-conhecimento",
+    "href": "about.html#áreas-de-conhecimento",
     "title": "Sobre Mim",
     "section": " Áreas de conhecimento",
     "text": "Áreas de conhecimento\n\n\n\nInferência Estatística\nAnálise Exploratória de Dados (EDA)\nAnálise Multivariada\nTeste de Hipóteses\nEstatística Não Paramétrica\nAnálise de Regressão\nAnálise de Sobrevivência\nModelos Lineares Generalizados\nPlanejamento de Experimentos\nAnálise de Séries Temporais\nInferência Bayesiana\n\n\n\n\nProbablidade\nÁlgebra Linear\nCálculo\nPesquisa Operacional\nProcessos Estocásticos\nAlgoritmos de busca bioinspirados\nMétodos de Amostragem"
   },
   {
-    "objectID": "about.html#fa-globe-titlea-globe-idiomas",
-    "href": "about.html#fa-globe-titlea-globe-idiomas",
+    "objectID": "about.html#idiomas",
+    "href": "about.html#idiomas",
     "title": "Sobre Mim",
     "section": " Idiomas",
     "text": "Idiomas\n Português - nativo\n Inglês - fluente\n Espanhol - básico\n Libras - básico"
   },
   {
-    "objectID": "about.html#fa-lemon-titlea-lemon-meus-hobbies",
-    "href": "about.html#fa-lemon-titlea-lemon-meus-hobbies",
+    "objectID": "about.html#meus-hobbies",
+    "href": "about.html#meus-hobbies",
     "title": "Sobre Mim",
     "section": " Meus hobbies",
     "text": "Meus hobbies\nNo meu (pouco e cada vez mais raro) tempo livre da vida acadêmica e científica, você me encontrará lendo um livro ou fazendo crochê de amigurumis. Tenho a sorte de viver em uma cidade costeira com belas paisagens e praias, onde gosto de sair com amigos e família. Nos finais de semana, gosto andar de patins pela praia para clarear a mente."
@@ -74,6 +88,6 @@
     "href": "portfolio.html",
     "title": "Portfólio",
     "section": "",
-    "text": "Poste\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\nBeatriz Lima\n\n\n7 de ago. de 2024\n\n\n\n\n\n\n\n\nNenhum item correspondente"
+    "text": "Painel de Vigilância da Saúde Materna e Perinatal\n\n\nEste painel apresenta indicadores sobre mortalidade materna e desfechos perinatais, destacando desigualdades sociais, raciais e de acesso à saúde. Os dados, provenientes de diversos sistemas nacionais, estão disponíveis desde 2012 para municípios, estados e regiões. A plataforma permite análises comparativas, séries históricas e acesso à documentação completa dos indicadores criados.\n\n\n\ndashboard\n\npainel\n\nshiny\n\nR\n\nSaúde\n\n\n\n\nBeatriz Lima Silveira et al\n\n\n30 de jun. de 2025\n\n\n\n\n\n\nNenhum item correspondente"
   }
 ]

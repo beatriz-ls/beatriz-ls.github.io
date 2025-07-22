@@ -1,0 +1,79 @@
+---
+title: "Painel de Vigilância da Saúde Materna e Perinatal"
+subtitle: >
+  Este painel apresenta indicadores sobre mortalidade materna e desfechos perinatais, destacando
+  desigualdades sociais, raciais e de acesso à saúde. Os dados, provenientes de diversos sistemas
+  nacionais, estão disponíveis desde 2012 para municípios, estados e regiões. A plataforma permite
+  análises comparativas, séries históricas e acesso à documentação completa dos indicadores criados.
+image: "capa_painel.png"
+categories: [dashboard, painel, shiny, R, Saúde]
+author: ["Beatriz Lima Silveira et al"]
+date: "2025-06-30"
+lang: pt
+format: html
+---
+
+[![Acesse o painel aqui](capa_painel.png)](https://observatorioobstetrico.shinyapps.io/painel-vigilancia-saude-materna-v2/)
+
+## Descrição
+
+A morte materna – morte de uma mulher durante a gestação, parto ou até 42 dias após o término da gestação – não é um evento isolado. Ela é o resultado de uma série de determinantes sociais em saúde que atuam durante a vida de uma mulher. Da mesma forma, desfechos perinatais dependem da saúde materna e da assistência à mulher durante o pré-natal e o parto, além da adequada assistência ao bebê após o nascimento.
+
+Neste painel, você encontrará um conjunto de indicadores que expressam a vulnerabilidade das mulheres ao óbito materno, seja por suas condições socioeconômicas, por sua raça/cor ou pela atenção à saúde recebida ao longo da sua vida reprodutiva. Encontrará também indicadores relacionados aos desfechos perinatais, determinados em grande parte pela atenção de saúde durante a gestação e o parto.
+
+Os indicadores estão disponíveis para municípios, estados, regiões de saúde e país e foram calculados a partir de vários sistemas de informação brasileiros (SINASC, SIM, SINAN, SIH, SIAB, ANS e estimativas populacionais). O painel contém indicadores a partir do ano 2012 e será atualizado anualmente. Para anos com as bases ainda não finalizadas pelo Ministério da Saúde, esses dados estarão identificados como “preliminares”.
+
+Os indicadores têm fácil visualização e podem ser explorados pelos gestores de saúde para identificar áreas prioritárias para investimento em seu município/estado. Para auxiliar na interpretação dos indicadores, são apresentados valores de referência, que podem ser metas nacionais ou internacionais, recomendações da Organização Mundial da Saúde, valores observados em países desenvolvidos ou a média nacional.
+
+O painel está organizado em três níveis:
+
+- Resumo dos blocos de indicadores: nesse nível, são mostrados todos os indicadores, de todos os blocos, em uma única tela, para o ano e região geográfica selecionados. Um relatório com o resumo dos indicadores está disponível para impressão;
+
+- Séries históricas: nesse nível, é mostrada a evolução dos indicadores de cada bloco para a localidade e período de tempo selecionados, sendo possível a comparação entre localidades, situando o município/estado/região no cenário nacional;
+
+- Visão detalhada dos indicadores: nesse nível, cada indicador pode ser visualizado individualmente e comparado a outras localidades. Deve-se primeiro selecionar o bloco ao qual o indicador pertence e depois o indicador escolhido. Além das visualizações, a documentação de cada indicador é apresentada de forma resumida: sua definição, a fonte dos dados, o método de cálculo e informações sobre a qualidade da informação são apresentados.
+
+Além disso, também estão disponíveis:
+
+- Documentação dos indicadores: nesse menu, disponibilizamos um documento para impressão, contendo a documentação completa de todos os indicadores do painel;
+
+- A história da Aparecida: nesse menu, disponibilizamos um link para a "História de Aparecida", onde mostramos os indicadores apresentados neste painel em diferentes contextos e em como eles refletem as situações de vulnerabilidade da mulher ao óbito materno, permitindo maior conhecimento sobre a morte materna e seus determinantes.
+
+## Desenvolvimento
+
+Este painel foi desenvolvido utilizando ferramentas de **_análise_** e **_visualização de dados_**, garantindo **_acessibilidade_** e **_interatividade_** para diferentes perfis de usuários, principalmente gestores e profissionais da saúde.
+
+A plataforma foi construída com a linguagem **_R_**, utilizando o pacote **_Shiny_**, que permite a criação de aplicações web **_dinâmicas_** e **_responsivas_**, facilitando a exploração e análise dos dados em tempo real. Para a manipulação, limpeza e análise dos dados, foram aplicadas bibliotecas do **_{tidyverse}_**, tais como **_{dplyr}_** e **_{tidyr}_**.
+
+O projeto contou com a colaboração de uma equipe de acadêmicos do **_Observatório Obstétrico Brasileiro_**. Destacam-se as contribuições de:
+
+- **Agatha Sacramento Rodrigues** – **_Coordenação_**
+
+- **Rafael Sant'Ana, Esley Caminhas, Samuel Meideiros, Mariana Costa, Pedro Brito** – **_Desenvolvimento de interface, visualização de dados, revisão e validação dos indicadores_**
+
+Além disso, o projeto foi realizado em parceria com órgãos públicos e instituições de referência na área de **_saúde pública_**, incluindo:
+
+
+::: column-container
+::: column
+[<img src="daslab_logo.png" alt="DasLab Logo" class="daslab_logo"/>](https://daslab-ufes.github.io/)
+:::
+
+::: column
+[<img src="logo_oobr.png" alt="Oobr Logo" class="oobr_logo"/>](https://observatorioobstetricobr.org/)
+:::
+:::
+
+::: column-container
+:::: column
+[<img src="logo_fiocruz.png" alt="FIOCRUZ Logo" class="fiocruz_logo"/>](https://www.fiocruz.br)
+::::
+
+::: column
+[<img src="logo_medicina_usp.png" alt="Medicina USP Logo" class="daslab_logo"/>](https://observatorioobstetricobr.org/)
+:::
+:::
+
+A integração dos dados utilizados no painel foi possível graças à disponibilização pública dos sistemas de informação nacionais (**_SINASC_**, **_SIM_**, **_SINAN_**, **_SIH_**, **_SIAB_**, **_ANS_**), complementados por **_estimativas populacionais oficiais_**.
+
+O painel é mantido e atualizado pela equipe do **_Observatório Obstétrico_**, com atualizações anuais para incorporar os dados mais recentes e aprimorar a experiência do usuário, visando sempre contribuir para a melhoria das **_políticas públicas_** voltadas à saúde materna e perinatal no Brasil.

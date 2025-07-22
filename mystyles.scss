@@ -65,6 +65,15 @@ i {
 }
 
 
+
+.fiocruz_logo {
+  width: auto; /* Mantém a proporção */
+  max-width: 180px; /* Reduz o tamanho máximo */
+  height: auto; /* Evita distorções */
+}
+
+
+
 .rladies_logo{
   width: 100%;
   max-width: 150px;
@@ -186,7 +195,7 @@ i {
 
 /* Subtítulo */
 .card-subtitle.listing-subtitle {
-  font-size: 1rem;
+  font-size: 0.6rem;
   font-weight: 600;
   color: $blackcurrant;
   text-align: center;
