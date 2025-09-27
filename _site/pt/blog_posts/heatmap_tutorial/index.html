@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt">
+<head>
+<link rel="alternate" hreflang="en" href="/blog_posts/heatmap_tutorial/index.html" />
+<link rel="alternate" hreflang="pt" href="/pt/blog_posts/heatmap_tutorial/index.pt.html" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Beatriz Lima Silveira">
+<title>Mapas de Calor no R – Beatriz Lima</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script><script src="../../site_libs/quarto-nav/headroom.min.js"></script><script src="../../site_libs/clipboard/clipboard.min.js"></script><script src="../../site_libs/quarto-search/autocomplete.umd.js"></script><script src="../../site_libs/quarto-search/fuse.min.js"></script><script src="../../site_libs/quarto-search/quarto-search.js"></script><meta name="quarto:offset" content="../../">
+<link href="../../images/lemon_icon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script><script src="../../site_libs/quarto-html/popper.min.js"></script><script src="../../site_libs/quarto-html/tippy.umd.min.js"></script><script src="../../site_libs/quarto-html/anchor.min.js"></script><link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script><link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-787db52a40bc6e0e710ca10138f469b2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
+  }
+}</script>
+</head>
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/lemon_icon.png" alt="" class="navbar-logo"></a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Beatriz Lima</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Procurar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alternar de navegação" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item"><div class="dropdown" id="languages-links-parent">
+<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="languages-button"><i class="bi bi-globe2"></i> Português</button><ul class="dropdown-menu" id="languages-links"><li><a class="dropdown-item" href="/blog_posts/heatmap_tutorial/index.html" id="language-link-en">English</a></li></ul>
+</div></li>
+<li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/beatriz-ls"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/beatriz-lima-silveira/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:beatrizlimasilveira@gmail.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Sobre Mim</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../portfolio.html"> 
+<span class="menu-text">Portfólio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cv" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">CV</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-cv">
+<li>
+    <a class="dropdown-item" href="../../assets/CV_Beatriz_Lima_en.pdf">
+ <span class="dropdown-text">English</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../assets/CV_Beatriz_Lima_pt.pdf">
+ <span class="dropdown-text">Português</span></a>
+  </li>  
+    </ul>
+</li>
+</ul>
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Mapas de Calor no R</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">news</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor</div>
+    <div class="quarto-title-meta-contents">
+             <p>Beatriz Lima Silveira </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Data de Publicação</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">26 de junho de 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header><section id="introdução" class="level2"><h2 class="anchored" data-anchor-id="introdução">Introdução</h2>
+<p>Dentro do contexto da análise de dados, a necessidade de criar elementos visuais para representar e/ou resumir informações presentes em conjunto de dados culminou na criação de diversos tipos de representações gráficas, entre elas o mapa de calor. De forma geral, um mapa de calor utiliza um gradiente de cores para representar quantificadamente uma determinada matriz. No R, há diversas maneiras de criar mapas de calor, e cada método ou pacote oferece diferentes funcionalidades e estilos, entretanto antes do avanço da computação já havia registros da utilização desse método de visualização de dados. No contexto histórico, um dos exemplos de utilização mais antigos é datado em 1873, quando Toussaint Loua - um estatístico francês - usou matriz desenhadas a mão e coloridas para a visualização das estatísticas de indicadores sociais dos distritos de Paris <a href="https://pt.wikipedia.org/wiki/Mapa_de_calor#:~:text=Um%20mapa%20de%20calor%20%C3%A9,agrupado%20ou%20varia%20no%20espa%C3%A7o.">1</a>. Neste tutorial, será explicado em que contexto optar por utilizar um mapa de calor, qual a natureza os dados devem ter, além de comparar três abordagens populares para a criação de mapas de calor no R: a função heatmap do pacote {stats}, o pacote {ggplot2} e o pacote {pheatmap}. A prática será realizada com os dados do Observatório Obstétrico Brasileiro, mais especificamente os dados desenvolvidos para o painel Qualidados que avalia um parâmetro denominado inconsistência. Um dado é considerado inconsistente se há informações que parecem ilógicas e/ou incompatíveis a partir da análise da combinação dos dados informados em dois ou mais campos do formulário. Esse indicador é utilizado no Qualidados para avaliar três bancos de dados, o Sistema de Vigilância Epidemiológica da Gripe (SIVEP), o Sistema Nacional de Nascidos Vivos (SINASC) e o Sistema de Informações sobre Mortalidade (SIM), entretando neste tutorial focaremos em avaliar inconsistências no SIVEP.</p>
+</section><section id="quando-utilizar-mapas-de-calor" class="level2"><h2 class="anchored" data-anchor-id="quando-utilizar-mapas-de-calor">Quando utilizar mapas de calor?</h2>
+<p>O mapa de calor é um recurso gráfico muito usado. Mas quando ele é a melhor escolha?</p>
+<section id="dados-numéricos-em-matriz" class="level3"><h3 class="anchored" data-anchor-id="dados-numéricos-em-matriz">Dados numéricos em matriz</h3>
+<p>Mapas de calor funcionam melhor quando os dados estão organizados em uma estrutura tabular, entretanto nem sempre os dados vão ser disponibilizados neste formato específico. Ao receber um banco de dados, muitas vezes haverá variáveis com natureza categórica e/ou numérica. Quando lidamos com dados numéricos organizados em formato matricial, como indicadores econômicos, taxas de mortalidade ou correlações entre variáveis, o mapa de calor permite visualizar padrões de forma direta ao avaliar a intensidade da cor.</p>
+</section><section id="cruzamento-entre-variáveis-categóricas" class="level3"><h3 class="anchored" data-anchor-id="cruzamento-entre-variáveis-categóricas">Cruzamento entre variáveis categóricas</h3>
+<p>Em muitos casos, temos duas variáveis categóricas e queremos observar como as categorias de uma variável se comportam em relação à outra. Por exemplo, ao cruzar os tipos de inconsistência (VARIAVEL) com as unidades da federação (ESTADO), o mapa de calor permite visualizar quais categorias se destacam — seja pela quantidade, pela frequência ou pela proporção de inconsistências.</p>
+<p>Neste cenário, o valor numérico que preenche a célula da matriz (por exemplo, a proporção de inconsistências) é que orienta a variação da cor.</p>
+</section><section id="dados-mistos-categóricos-e-numéricos" class="level3"><h3 class="anchored" data-anchor-id="dados-mistos-categóricos-e-numéricos">Dados mistos: categóricos e numéricos</h3>
+<p>Muitos bancos de dados contêm tanto variáveis categóricas quanto variáveis numéricas.</p>
+<p>Nesses casos, o mapa de calor é útil para:</p>
+<ul>
+<li><p>Comparar grupos diferentes de forma visual e rápida;</p></li>
+<li><p>Identificar quais subgrupos têm valores mais altos ou mais baixos;</p></li>
+<li><p>Revelar padrões ou diferenças sutis que podem passar despercebidas em tabelas comuns.</p></li>
+</ul></section><section id="dados-com-estruturas-não-ordenadas" class="level3"><h3 class="anchored" data-anchor-id="dados-com-estruturas-não-ordenadas">Dados com estruturas não ordenadas</h3>
+<p>Diferente dos gráficos de linha, o mapa de calor não exige uma ordenação natural dos eixos. Mesmo quando as variáveis são categorias nominais sem hierarquia (como nomes de estados ou tipos de erro), a variação de cor permite identificar padrões de forma eficiente. Isso torna o mapa de calor especialmente útil quando lidamos com combinações de variáveis categóricas associadas a valores numéricos.</p>
+<p>Entretanto, mapas de calor ainda podem e são costumeiramente utilizados em contextos com ordenação, como por exemplos para visualização de clusters hierarquicos, onde os eixos são reorganizados para refletirem a semelhança entre observações. Dito isso, neste tutorial não será abordado visualização de cluster hierárquicos.</p>
+</section></section><section id="pré-processamento-dos-dados" class="level2"><h2 class="anchored" data-anchor-id="pré-processamento-dos-dados">Pré-processamento dos dados</h2>
+<p>Os dados do Observatório Obstétrico Brasileiro estão disponíveis no <a href="https://www.synapse.org/Synapse:syn35916919/files/">Synapse</a>, uma plataforma utilizada como suporte para colaborações científicas focadas em open source e disponibilização de dados da área da saúde.</p>
+<p>Iniciaremos baixando o banco de dados que será chamado de “dados”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"data/dados_oobr_qualidados_SIVEP_Inconsistencia_2009_2023.rda"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> dados_oobr_qualidados_SIVEP_Inconsistencia_2009_2023</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Os dados foram disponibilizados em formato <code>.rda</code> - um formato de dados nativo do R -, para baixar os dados é só utilizar a função <code>load()</code> e renomear. Algumas das funções que iremos abordar só aceitam entrada de dados em formato matricial, então é necessário converter os dados utilizando `<code>as.matrix()</code>. Para isso, é necessário avaliar o formato em que os dados foram disponibilizados e manipular estrutura de acordo com a necessidade.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dados)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                MUNICIPIO ESTADO          VARIAVEL  ANO INCONSISTENTES TOTAIS
+1           CURITIBA - PR     PR SEXO e IDADE_GEST 2020              0    237
+2           TERESINA - PI     PI SEXO e IDADE_GEST 2020              0    303
+3          SAO PAULO - SP     SP SEXO e IDADE_GEST 2020              0   1496
+4          GUARULHOS - SP     SP SEXO e IDADE_GEST 2020              0    155
+5 SAO CAETANO DO SUL - SP     SP SEXO e IDADE_GEST 2020              0     11
+6             SOBRAL - CE     CE SEXO e IDADE_GEST 2020              0    232</code></pre>
+</div>
+</div>
+<p>Observa-se que os dados estão em formato agregado (também chamados de dados sumarizados), pois cada linha não representa um indivíduo, mas sim uma <strong>unidade geográfica (município)</strong> em um <strong>ano específico</strong>, com um <strong>resumo estatístico</strong> (número total de registros e inconsistências) para uma determinada variável. As colunas estão descritas:</p>
+<ul>
+<li>MUNICIPIO: nome do município, acompanhado da sigla da unidade federativa;</li>
+<li>ESTADO: sigla da unidade federativa (UF);</li>
+<li>VARIAVEL: dados preenchidos no questionário do SIVEP-Gripe que apresentam inconsistência entre si (ex.: “SEXO e IDADE_GEST” indica uma inconsistencia lógica da informação preenchida entre as variáveis SEXO e IDADE GESTACIONAL).</li>
+<li>ANO: ano de referência dos dados;</li>
+<li>INCONSISTENTES: número de registros considerados inconsistentes para aquela variável naquele município e ano;</li>
+<li>TOTAIS: número total de registros (somando inconsistentes e válidos) para a combinação de município, variável e ano.</li>
+</ul>
+<p>Se temos como objetivo construir um mapa de calor da porcentagem de inconsistências por estado para cada variáveis é necessário fazer umas modificações no banco de dado para transformar os dados em inputs aceitáveis paras as funções que plotam os gráficos.</p>
+<p>No caso destes dados, iniciamos criando uma variável nos dados chamada “porcentagem_inconsistências” com base nas variáveis “TOTAL” e “INCONSISTENTES” utilizando o pacote {dplyr} para fazer a manipulação.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrando e calculando a porcentagem de inconsistências</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>dataset_aux <span class="ot">&lt;-</span> dados <span class="sc">%&gt;%</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ANO <span class="sc">==</span> <span class="dv">2023</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(VARIAVEL, ESTADO) <span class="sc">%&gt;%</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">PORCENTAGEM_INCONSISTENTES =</span> <span class="fu">sum</span>(INCONSISTENTES) <span class="sc">/</span> <span class="fu">sum</span>(TOTAIS), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dataset_aux)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  VARIAVEL          ESTADO PORCENTAGEM_INCONSISTENTES
+  &lt;fct&gt;             &lt;chr&gt;                       &lt;dbl&gt;
+1 SEXO e IDADE_GEST AC                         0     
+2 SEXO e IDADE_GEST AL                         0     
+3 SEXO e IDADE_GEST AM                         0     
+4 SEXO e IDADE_GEST AP                         0     
+5 SEXO e IDADE_GEST BA                         0     
+6 SEXO e IDADE_GEST CE                         0.0143</code></pre>
+</div>
+</div>
+<p>Neste código, foi criado um novo objeto chamado dataset_aux a partir do objeto original dados, utilizando <code>%&gt;%</code> para encadear os seguintes comandos:</p>
+<ul>
+<li><p><code>filter(ANO == 2023)</code>: filtra o conjunto de dados para manter apenas as linhas referentes ao ano de 2023;</p></li>
+<li><p><code>group_by(VARIVEL, ESTADO)</code>: agrupa os dados pelas variáveis VARIAVEL e ESTADO. Isso permite que o cálculo posterior seja feito para cada combinação dessas categorias;</p></li>
+<li><p><code>summarise(PORCENTAGEM_INCONSISTENTES = sum(INCONSISTENTES) / sum(TOTAIS), .groups = "drop")</code>: dentro de cada grupo definido acima, calcula a porcentagem de inconsistências, ou seja, o total de registros inconsistentes dividido pelo total geral de registros. O argumento <code>.groups = "drop"</code> serve para remover o agrupamento após o resumo, retornando um data.frame não agrupado.</p></li>
+</ul>
+<p>Depois de criar a data.frame que será o valor da matriz do nosso mapa de calor, é necessário transformar o objeto dataset.aux em uma matriz.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformando para formato largo</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>matriz_dados <span class="ot">&lt;-</span> dataset_aux <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> ESTADO, <span class="at">values_from =</span> PORCENTAGEM_INCONSISTENTES) <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(matriz_dados) <span class="ot">&lt;-</span> matriz_dados<span class="sc">$</span>VARIAVEL</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>matriz_dados <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(matriz_dados[ , <span class="sc">-</span><span class="dv">1</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Usa-se os pacotes {dplyr} e {tidyr} para transformar os dados de formato longo para formato largo.</p>
+<p>A função `<code>pivot_wider()</code> do pacote {tidyr} reorganiza os dados para que cada valor único da coluna ESTADO se torne uma nova coluna, preenchida com os valores correspondentes de PORCENTAGEM_INCONSISTENTES.</p>
+<p>Após isso, definimos a coluna VARIAVEL como o nome das linhas da matriz, e usamos <code>as.matrix()</code> para converter o data.frame resultante em uma matriz numérica adequada para as funções de mapa de calor.</p>
+<section id="formatos-de-organização-de-dados" class="level3"><h3 class="anchored" data-anchor-id="formatos-de-organização-de-dados">Formatos de organização de dados</h3>
+<p>Há dois formatos de organização de dados comumente encontrados, eles são ditos formato longo e formato largo. Dados que estão no formato longo são organizados de forma que cada linha representa uma única observação e as variáveis de interesse são empilhadas em colunas. O formato largo organiza os dados de modo que cada ID ou entidade seja colocada em uma coluna distinta que representa uma variável específica. Diferentemente do formato largo, onde cada variável tem sua própria coluna, no formato longo, múltiplas observações para a mesma variável são empilhadas em uma única coluna, com outras colunas identificando a unidade.</p>
+<p>Dentro do contexto do pré processamento de dados que foi realizado, os dados foram disponibilizados em formato longo, que é aceito pelo pacote ggplot, e manipulados para o formato largo para converter em matriz e ser utilizado nas funções <code>heatmap()</code> e <code>pheatmap()</code>.</p>
+</section></section><section id="mapas-de-calor-com-base" class="level2"><h2 class="anchored" data-anchor-id="mapas-de-calor-com-base">Mapas de Calor com {base}</h2>
+<p>Para a construção de mapas de calor de forma simples, o R possui uma função nativa no pacote {stats} chamada <code>heatmap()</code>. Essa função exige dados em formato de matriz, como o objeto matriz_dados utilizado abaixo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">heatmap</span>(matriz_dados,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">Rowv =</span> <span class="cn">NA</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">Colv =</span> <span class="cn">NA</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> viridis<span class="sc">::</span><span class="fu">viridis</span>(<span class="dv">100</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">scale =</span> <span class="st">"none"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"Estado"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">""</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Inconsistências no SIVEP-Gripe em 2022 (stats)"</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/heatmap-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Os parâmetros <code>Rowv = NA</code> e <code>Colv = NA</code> definem se as colunas e linhas devem ser reordenadas, definindo NA, a ordenação automática é desativada. A paleta de cores, definida por <code>col</code>, varia de rosa a vermelho escuro usando <code>colorRampPalette()</code>. Os dados são apresentados sem qualquer escala (<code>scale = "none"</code>), preservando seus valores originais. Os rótulos do eixo e títulos são definidos pelo <strong><code>xlab</code></strong>, <strong><code>ylab</code></strong> e <strong><code>main</code></strong>.</p>
+<p>Apesar de ser uma escolha simples e direta, a personificação da função heatmap é limitada, tornando menos eficiente quando necessário lidar com banco de dados que exigem um maior nível de customização.</p>
+</section><section id="mapas-de-calor-com-pheatmap" class="level2"><h2 class="anchored" data-anchor-id="mapas-de-calor-com-pheatmap">Mapas de Calor com {pheatmap}</h2>
+<p>Em contrasrte, iremos construir um mapa de calor usando o o pacote {pheatmap}. Este pacote foi projetado especificamente para criar mapas de calor, oferecendo múltiplas opções de personalização. No entanto, para utilização é mais complexo que o pacote heatmap e, comparadado com <code>ggplot()</code>, é menos flexível em termos de integração com outros elementos gráficos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pheatmap)<span class="co"># chamando biblioteca</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pheatmap</span>(matriz_dados,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">cluster_rows =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">cluster_cols =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">color =</span> viridis<span class="sc">::</span><span class="fu">viridis</span>(<span class="dv">100</span>),</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">fontsize =</span> <span class="dv">8</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">main =</span>  <span class="st">"Inconsistências no SIVEP-Gripe em 2022 (pheatmap)"</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/pheatmap-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Esta função também só aceita como input os dados em formato de matriz, por isso utilizaremos o matriz_dados. Aqui, <code>cluster_rows = FALSE</code> e <code>cluster_cols = FALSE</code> indicam que não deve haver agrupamento (clustering) automático das linhas ou colunas. O paramêtro <code>color</code> especifica a paleta de cores. <code>fontsize = 8</code> ajusta o tamanho da fonte utilizada nos textos e <code>main()</code> define o título.</p>
+</section><section id="mapas-de-calor-com-ggplot2" class="level2"><h2 class="anchored" data-anchor-id="mapas-de-calor-com-ggplot2">Mapas de Calor com {ggplot2}</h2>
+<p>O <code>ggplot()</code> oferece uma grande flexibilidade para personalização gráfica e aceita dados em formato longo. Por isso, utilizaremos o dataset_aux.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># chamando biblioteca</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dataset_aux, <span class="fu">aes</span>(<span class="at">x =</span> ESTADO, <span class="at">y =</span> VARIAVEL, <span class="at">fill =</span> PORCENTAGEM_INCONSISTENTES)) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Porcentagem"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span>percent,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">option =</span> <span class="st">"D"</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Inconsistências no SIVEP-Gripe em 2022 (ggplot)"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Neste código, <strong><code>aes()</code></strong> define as variáveis do eixo x e do eixo y. scale_fill_viridis_c() ajusta a escala de cores do preenchimento das células do mapa de calor, utilizando a paleta perceptualmente uniforme da função viridis. O argumento option = “D” especifica a variação da paleta utilizada. O argumento name define o rótulo da legenda de cores como “Porcentagem” e labels formata os valores na legenda como percentuais usando a função scales::percent. theme_minimal() define o tema do gráfico como minimalista. labs() define o título do gráfico.</p>
+<p><strong><code>ggplot()</code></strong> embora ofereça uma gama mais ampla de opções, não será de fácil utilização para pessoas que não tenham conhecimento prévio sobre a ferramenta. Dito isso, é interessante aprender ggplot2, pois é uma ferramenta que permite criar variados tipos de gráficos. No OObr, o aluno Pedro Brito apresentou um minicurso de ggplot2 em um workshop de Ciência de Dados, disponível neste <a href="https://observatorioobstetricobr.org/publicacoes/oobr-realiza-workshop-de-ciencia-de-dados-em-parceria-com-a-constat/">link</a>.</p>
+</section><section id="conclusão" class="level2"><h2 class="anchored" data-anchor-id="conclusão">Conclusão</h2>
+<p>Por fim, neste tutorial, após apontar a utilidade e origem do mapa de calor como um recurso gráfico, também foi apontado diversos métodos de construção de mapas de calor utilizando a ferramenta R. Desta forma, percebe-se que a escolha entre essas opções depende das necessidades específicas do projeto, da familiaridade com cada função e do nível de personalização desejado.</p>
+</section><section id="referências" class="level2"><h2 class="anchored" data-anchor-id="referências">Referências</h2>
+<p>[1] Wilkinson L, Friendly M (maio de 2009). «The History of the Cluster Heat Map». The American Statistician. 63 (2): 179–184. CiteSeerX 10.1.1.165.7924 Acessível livremente. doi:10.1198/tas.2009.0033</p>
+
+
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiada");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("\/pt");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Website build with <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+</div>   
+    <div class="nav-footer-center">
+       
+    </div>
+    <div class="nav-footer-right">
+<p>Copyright 2024, Beatriz Lima</p>
+</div>
+  </div>
+</footer>
+</body>
+</html>

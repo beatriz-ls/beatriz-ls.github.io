@@ -1,13 +1,104 @@
 ---
-title: "How i created my website with Quarto"
+title: "How I Built My Website Using Quarto"
 author: "Beatriz Lima Silveira"
 date: "2024-08-04"
-categories: [tutorial, R, quarto]
+categories: [news]
 image: "thumbnail.png"
 lang: en
+#theme: "bea_blog_theme.scss"
 ---
 
-This is the first post in a Quarto blog. Welcome!
+## {{< fa lemon >}} Introduction
+
+For a while, I had been thinking about creating a website to publish my projects and ideas. As an R user, using [Quarto](https://quarto.org/) seemed like the best choice due to its usability for publications and rendering. It also provides desirable features such as support for CSS or SCSS, the availability of attractive and easy-to-use templates, and compatibility with other languages, such as Python (which I already use) and Julia (which I hope to learn one day).
+
+That said, there were some features I **wanted** my website to have, such as: (1) an appealing design and intuitive layout, (2) multilingual support with a language switcher button, and (3) dark mode. There were also some features I **needed** it to have, like: (1) a portfolio section, (2) a blog with an organized index, and (3) access to my social networks and CV. So, in this tutorial blog post, I will explain how I created each step and what tools I used.
+
+## {{< fa circle-question >}} Why Quarto?
+
+There are several R-based tools for building websites, such as *{blogdown}* and *{distill}*, but I chose Quarto for its versatility and easy customization.
+
+*{blogdown}* was one of the first options for blog creation and is based on Hugo, a static site generator that offers a wide variety of prebuilt themes. *{distill}* came later as an alternative focused on academics. It produces clean-looking pages, ideal for scientific publications, project presentations, or technical reports. However, it has fewer customization options and is no longer actively developed.
+
+| Tool      | Best for                  | Multi-language support | Customization | Ease of use |
+|-----------|---------------------------|------------------------|---------------|-------------|
+| blogdown  | Technical blogs with Hugo | R only                 | High          | Medium      |
+| distill   | Simple scientific outputs | R only                 | Low           | High        |
+| Quarto    | Sites, blogs, books, slides| R, Python, Julia, Observable | High | High |
 
 
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
+## {{< fa screwdriver-wrench >}} Step 1: Setup
+
+::: {.callout-important title="Preliminary Setup"}
+1. **R and RStudio**\
+   Install R ([CRAN](https://cran.r-project.org/)) and RStudio ([RStudio Download](https://posit.co/download/rstudio-desktop/)).
+
+2. **Quarto**\
+   Starting from version `2022.07.1`, Quarto comes bundled with RStudio.\
+   Otherwise, download it manually here: [quarto.org/docs/get-started](https://quarto.org/docs/get-started)
+
+3. **Git and GitHub**\
+   Install Git at [git-scm.com](https://git-scm.com/) and configure it in your terminal.
+:::
+
+Overall, the first steps for creating a blog are not complex thanks to the [long and detailed guide](https://quarto.org/docs/websites/) written by the Quarto development team.
+
+![Quarto Guide](images/page_guide.png)
+
+After [downloading (or updating)](https://quarto.org/docs/get-started/) Quarto on your computer, I suggest reading the guide thoroughly and checking examples of blogs/portfolios made with Quarto. Here are a few I recommend:
+
+- [Sam Shanny-Csik’s site](https://samanthacsik.github.io/)  
+- [Beatriz Milz’s site](https://beamilz.com/)  
+- [Danielle Navarro’s site](https://djnavarro.net/)  
+
+
+## {{< fa file >}} Step 2: Creating a New Blog Project in RStudio
+
+Open RStudio and follow these steps:
+
+1. Go to `File` > `New Project`...  
+
+![](images/new_project_page.png){.center-img}
+
+2. Select `New Directory`  
+
+![](images/new_directory_page.png){.center-img}
+
+3. Then click on Quarto Blog  
+
+![](images/quarto_project.png){.center-img}
+
+### Naming and Saving Your Blog
+
+Now, fill in the following fields:
+
+**Directory name**: the name of your folder (e.g., my-blog)  
+
+**Create project as subdirectory of**: choose where to save the project on your computer  
+
+You can also check *Open in new session* to launch the project in a new RStudio tab.  
+
+Click **Create Project**.  
+
+### Initial Project Structure
+
+Once created, the project will have a structure like this:
+
+```         
+my-blog/
+├── _quarto.yml
+├── index.qmd
+├── about.qmd
+├── posts/
+│   └── welcome/
+│       └── index.qmd
+└── styles.css
+```
+
+- `_quarto.yml`: general site configuration  
+- `index.qmd`: the homepage  
+- `about.qmd`: your “about” page  
+- `posts/`: folder for posts (one subfolder per post)  
+- `styles.css`: custom stylesheet (colors, fonts, etc.)  
+
+After this step, open any `.qmd` file (like `index.qmd`) and click **Render** in the top-right corner of the editor.  

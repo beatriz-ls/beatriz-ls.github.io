@@ -1,38 +1,10 @@
 [
   {
-    "objectID": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html",
-    "href": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html",
-    "title": "Maternal and Perinatal Health Surveillance Dashboard",
-    "section": "",
-    "text": "Acesse o painel aqui"
-  },
-  {
-    "objectID": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html#description",
-    "href": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html#description",
-    "title": "Maternal and Perinatal Health Surveillance Dashboard",
-    "section": "Description",
-    "text": "Description\nMaternal death — the death of a woman during pregnancy, childbirth, or up to 42 days after the end of pregnancy — is not an isolated event. It is the result of a series of social determinants of health that act throughout a woman’s life. Similarly, perinatal outcomes depend on maternal health and the care a woman receives during prenatal care and childbirth, as well as adequate care for the baby after birth.\nThis dashboard presents a set of indicators that express women’s vulnerability to maternal death, whether due to their socioeconomic conditions, race/color, or the health care received throughout their reproductive life. It also includes indicators related to perinatal outcomes, largely determined by health care during pregnancy and delivery.\nThe indicators are available for municipalities, states, health regions, and the country, and were calculated using various Brazilian information systems (SINASC, SIM, SINAN, SIH, SIAB, ANS, and population estimates). The dashboard contains indicators starting from the year 2012 and will be updated annually. For years where the data sets have not yet been finalized by the Ministry of Health, these data will be marked as “preliminary.”\nThe indicators are easily visualized and can be explored by health managers to identify priority areas for investment in their municipality or state. To aid interpretation, reference values are provided, which may include national or international targets, World Health Organization recommendations, values observed in developed countries, or the national average.\nThe dashboard is organized into three levels:\n\nSummary of indicator blocks: At this level, all indicators from all blocks are displayed on a single screen for the selected year and geographic region. A summary report of the indicators is available for printing;\nHistorical series: This level shows the evolution of indicators for each block over the selected locality and time period, allowing comparison between localities and situating the municipality/state/region in the national context;\nDetailed view of indicators: At this level, each indicator can be viewed individually and compared with other localities. First, the block to which the indicator belongs must be selected, followed by the chosen indicator. Besides the visualizations, a brief documentation of each indicator is presented: its definition, data source, calculation method, and information about data quality.\n\nAdditionally, the following are also available:\n\nIndicators documentation: This menu provides a printable document containing the full documentation of all the dashboard indicators;\nThe story of Aparecida: This menu provides a link to the “Story of Aparecida,” where the indicators presented in this dashboard are shown in different contexts and how they reflect women’s vulnerability to maternal death, allowing greater understanding of maternal mortality and its determinants."
-  },
-  {
-    "objectID": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html#development",
-    "href": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html#development",
-    "title": "Maternal and Perinatal Health Surveillance Dashboard",
-    "section": "Development",
-    "text": "Development\nThis dashboard was developed using data analysis and data visualization tools, ensuring accessibility and interactivity for different user profiles, especially health managers and professionals.\nThe platform was built with the R language, using the Shiny package, which enables the creation of dynamic and responsive web applications, facilitating real-time data exploration and analysis. For data manipulation, cleaning, and analysis, libraries from the {tidyverse}, such as {dplyr} and {tidyr}, were applied.\nThe project involved collaboration from a team of academics from the Brazilian Obstetric Observatory. Notable contributions include:\n\nAgatha Sacramento Rodrigues – Coordination\nRafael Sant’Ana, Esley Caminhas, Samuel Meideiros, Mariana Costa, Pedro Brito – Interface development, data visualization, review, and validation of indicators\n\nAdditionally, the project was carried out in partnership with public agencies and reference institutions in the field of public health, including:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe integration of the data used in the dashboard was made possible thanks to the public availability of national information systems (SINASC, SIM, SINAN, SIH, SIAB, ANS), complemented by official population estimates.\nThe dashboard is maintained and updated by the Obstetric Observatory team, with annual updates to incorporate the latest data and improve the user experience, always aiming to contribute to the enhancement of public policies focused on maternal and perinatal health in Brazil."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Beatriz Lima",
-    "section": "",
-    "text": "Welcome to my website! I’m Beatriz Lima  , a future statistician and data scientist, currently pursuing an undergraduate degree at Universidade Federal do Espírito Santo. Here, you’re gonna find my portfolio of projects, as well as my data blog."
-  },
-  {
     "objectID": "blog.html",
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "How i created my website with Quarto\n\n\n\n\n\n\n\n\nAug 4, 2024\n\n\nBeatriz Lima Silveira\n\n\n\n\n\nNo matching items"
+    "text": "How I Built My Website Using Quarto\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2024\n\n\nBeatriz Lima Silveira\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -79,15 +51,71 @@
   {
     "objectID": "blog_posts/quarto_website_tutorial/index.html",
     "href": "blog_posts/quarto_website_tutorial/index.html",
-    "title": "How i created my website with Quarto",
+    "title": "How I Built My Website Using Quarto",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "For a while, I had been thinking about creating a website to publish my projects and ideas. As an R user, using Quarto seemed like the best choice due to its usability for publications and rendering. It also provides desirable features such as support for CSS or SCSS, the availability of attractive and easy-to-use templates, and compatibility with other languages, such as Python (which I already use) and Julia (which I hope to learn one day).\nThat said, there were some features I wanted my website to have, such as: (1) an appealing design and intuitive layout, (2) multilingual support with a language switcher button, and (3) dark mode. There were also some features I needed it to have, like: (1) a portfolio section, (2) a blog with an organized index, and (3) access to my social networks and CV. So, in this tutorial blog post, I will explain how I created each step and what tools I used."
+  },
+  {
+    "objectID": "blog_posts/quarto_website_tutorial/index.html#introduction",
+    "href": "blog_posts/quarto_website_tutorial/index.html#introduction",
+    "title": "How I Built My Website Using Quarto",
+    "section": "",
+    "text": "For a while, I had been thinking about creating a website to publish my projects and ideas. As an R user, using Quarto seemed like the best choice due to its usability for publications and rendering. It also provides desirable features such as support for CSS or SCSS, the availability of attractive and easy-to-use templates, and compatibility with other languages, such as Python (which I already use) and Julia (which I hope to learn one day).\nThat said, there were some features I wanted my website to have, such as: (1) an appealing design and intuitive layout, (2) multilingual support with a language switcher button, and (3) dark mode. There were also some features I needed it to have, like: (1) a portfolio section, (2) a blog with an organized index, and (3) access to my social networks and CV. So, in this tutorial blog post, I will explain how I created each step and what tools I used."
+  },
+  {
+    "objectID": "blog_posts/quarto_website_tutorial/index.html#why-quarto",
+    "href": "blog_posts/quarto_website_tutorial/index.html#why-quarto",
+    "title": "How I Built My Website Using Quarto",
+    "section": " Why Quarto?",
+    "text": "Why Quarto?\nThere are several R-based tools for building websites, such as {blogdown} and {distill}, but I chose Quarto for its versatility and easy customization.\n{blogdown} was one of the first options for blog creation and is based on Hugo, a static site generator that offers a wide variety of prebuilt themes. {distill} came later as an alternative focused on academics. It produces clean-looking pages, ideal for scientific publications, project presentations, or technical reports. However, it has fewer customization options and is no longer actively developed.\n\n\n\n\n\n\n\n\n\n\nTool\nBest for\nMulti-language support\nCustomization\nEase of use\n\n\n\n\nblogdown\nTechnical blogs with Hugo\nR only\nHigh\nMedium\n\n\ndistill\nSimple scientific outputs\nR only\nLow\nHigh\n\n\nQuarto\nSites, blogs, books, slides\nR, Python, Julia, Observable\nHigh\nHigh"
+  },
+  {
+    "objectID": "blog_posts/quarto_website_tutorial/index.html#step-1-setup",
+    "href": "blog_posts/quarto_website_tutorial/index.html#step-1-setup",
+    "title": "How I Built My Website Using Quarto",
+    "section": " Step 1: Setup",
+    "text": "Step 1: Setup\n\n\n\n\n\n\nPreliminary Setup\n\n\n\n\nR and RStudio\nInstall R (CRAN) and RStudio (RStudio Download).\nQuarto\nStarting from version 2022.07.1, Quarto comes bundled with RStudio.\nOtherwise, download it manually here: quarto.org/docs/get-started\nGit and GitHub\nInstall Git at git-scm.com and configure it in your terminal.\n\n\n\nOverall, the first steps for creating a blog are not complex thanks to the long and detailed guide written by the Quarto development team.\n\n\n\nQuarto Guide\n\n\nAfter downloading (or updating) Quarto on your computer, I suggest reading the guide thoroughly and checking examples of blogs/portfolios made with Quarto. Here are a few I recommend:\n\nSam Shanny-Csik’s site\n\nBeatriz Milz’s site\n\nDanielle Navarro’s site"
+  },
+  {
+    "objectID": "blog_posts/quarto_website_tutorial/index.html#step-2-creating-a-new-blog-project-in-rstudio",
+    "href": "blog_posts/quarto_website_tutorial/index.html#step-2-creating-a-new-blog-project-in-rstudio",
+    "title": "How I Built My Website Using Quarto",
+    "section": " Step 2: Creating a New Blog Project in RStudio",
+    "text": "Step 2: Creating a New Blog Project in RStudio\nOpen RStudio and follow these steps:\n\nGo to File &gt; New Project…\n\n\n\nSelect New Directory\n\n\n\nThen click on Quarto Blog\n\n\n\nNaming and Saving Your Blog\nNow, fill in the following fields:\nDirectory name: the name of your folder (e.g., my-blog)\nCreate project as subdirectory of: choose where to save the project on your computer\nYou can also check Open in new session to launch the project in a new RStudio tab.\nClick Create Project.\n\n\nInitial Project Structure\nOnce created, the project will have a structure like this:\nmy-blog/\n├── _quarto.yml\n├── index.qmd\n├── about.qmd\n├── posts/\n│   └── welcome/\n│       └── index.qmd\n└── styles.css\n\n_quarto.yml: general site configuration\n\nindex.qmd: the homepage\n\nabout.qmd: your “about” page\n\nposts/: folder for posts (one subfolder per post)\n\nstyles.css: custom stylesheet (colors, fonts, etc.)\n\nAfter this step, open any .qmd file (like index.qmd) and click Render in the top-right corner of the editor."
+  },
+  {
+    "objectID": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html",
+    "href": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html",
+    "title": "Maternal and Perinatal Health Surveillance Dashboard",
+    "section": "",
+    "text": "Acesse o painel aqui"
+  },
+  {
+    "objectID": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html#description",
+    "href": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html#description",
+    "title": "Maternal and Perinatal Health Surveillance Dashboard",
+    "section": "Description",
+    "text": "Description\nMaternal death — the death of a woman during pregnancy, childbirth, or up to 42 days after the end of pregnancy — is not an isolated event. It is the result of a series of social determinants of health that act throughout a woman’s life. Similarly, perinatal outcomes depend on maternal health and the care a woman receives during prenatal care and childbirth, as well as adequate care for the baby after birth.\nThis dashboard presents a set of indicators that express women’s vulnerability to maternal death, whether due to their socioeconomic conditions, race/color, or the health care received throughout their reproductive life. It also includes indicators related to perinatal outcomes, largely determined by health care during pregnancy and delivery.\nThe indicators are available for municipalities, states, health regions, and the country, and were calculated using various Brazilian information systems (SINASC, SIM, SINAN, SIH, SIAB, ANS, and population estimates). The dashboard contains indicators starting from the year 2012 and will be updated annually. For years where the data sets have not yet been finalized by the Ministry of Health, these data will be marked as “preliminary.”\nThe indicators are easily visualized and can be explored by health managers to identify priority areas for investment in their municipality or state. To aid interpretation, reference values are provided, which may include national or international targets, World Health Organization recommendations, values observed in developed countries, or the national average.\nThe dashboard is organized into three levels:\n\nSummary of indicator blocks: At this level, all indicators from all blocks are displayed on a single screen for the selected year and geographic region. A summary report of the indicators is available for printing;\nHistorical series: This level shows the evolution of indicators for each block over the selected locality and time period, allowing comparison between localities and situating the municipality/state/region in the national context;\nDetailed view of indicators: At this level, each indicator can be viewed individually and compared with other localities. First, the block to which the indicator belongs must be selected, followed by the chosen indicator. Besides the visualizations, a brief documentation of each indicator is presented: its definition, data source, calculation method, and information about data quality.\n\nAdditionally, the following are also available:\n\nIndicators documentation: This menu provides a printable document containing the full documentation of all the dashboard indicators;\nThe story of Aparecida: This menu provides a link to the “Story of Aparecida,” where the indicators presented in this dashboard are shown in different contexts and how they reflect women’s vulnerability to maternal death, allowing greater understanding of maternal mortality and its determinants."
+  },
+  {
+    "objectID": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html#development",
+    "href": "portfolio_projects/painel-vigilancia-materna-perinatal/index.html#development",
+    "title": "Maternal and Perinatal Health Surveillance Dashboard",
+    "section": "Development",
+    "text": "Development\nThis dashboard was developed using data analysis and data visualization tools, ensuring accessibility and interactivity for different user profiles, especially health managers and professionals.\nThe platform was built with the R language, using the Shiny package, which enables the creation of dynamic and responsive web applications, facilitating real-time data exploration and analysis. For data manipulation, cleaning, and analysis, libraries from the {tidyverse}, such as {dplyr} and {tidyr}, were applied.\nThe project involved collaboration from a team of academics from the Brazilian Obstetric Observatory. Notable contributions include:\n\nAgatha Sacramento Rodrigues – Coordination\nRafael Sant’Ana, Esley Caminhas, Samuel Meideiros, Mariana Costa, Pedro Brito – Interface development, data visualization, review, and validation of indicators\n\nAdditionally, the project was carried out in partnership with public agencies and reference institutions in the field of public health, including:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe integration of the data used in the dashboard was made possible thanks to the public availability of national information systems (SINASC, SIM, SINAN, SIH, SIAB, ANS), complemented by official population estimates.\nThe dashboard is maintained and updated by the Obstetric Observatory team, with annual updates to incorporate the latest data and improve the user experience, always aiming to contribute to the enhancement of public policies focused on maternal and perinatal health in Brazil."
   },
   {
     "objectID": "portfolio.html",
     "href": "portfolio.html",
     "title": "Portfolio",
     "section": "",
-    "text": "Maternal and Perinatal Health Surveillance Dashboard\n\n\nThis dashboard presents indicators on maternal mortality and perinatal outcomes, highlighting social, racial, and healthcare access inequalities. The data, sourced from various national systems, have been available since 2012 for municipalities, states, and regions. The platform enables comparative analyses, historical series, and access to the complete documentation of the created indicators.\n\n\n\ndashboard\n\npainel\n\nshiny\n\nR\n\nSaúde\n\n\n\n\nBeatriz Lima Silveira et al\n\n\nJun 30, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "Maternal and Perinatal Health Surveillance Dashboard\n\n\nThis dashboard presents indicators on maternal mortality and perinatal outcomes, highlighting social, racial, and healthcare access inequalities. The data, sourced from various national systems, have been available since 2012 for municipalities, states, and regions. The platform enables comparative analyses, historical series, and access to the complete documentation of the created indicators.\n\n\n\ndashboard\n\n\npainel\n\n\nshiny\n\n\nR\n\n\nSaúde\n\n\n\n\nBeatriz Lima Silveira et al\n\n\nJun 30, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Beatriz Lima",
+    "section": "",
+    "text": "Welcome to my website! I’m Beatriz Lima  , a future statistician and data scientist, currently pursuing an undergraduate degree at Universidade Federal do Espírito Santo. Here, you’re gonna find my portfolio of projects, as well as my data blog."
   }
 ]

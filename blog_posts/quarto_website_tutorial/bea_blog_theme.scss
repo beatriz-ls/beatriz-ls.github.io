@@ -1,0 +1,122 @@
+/*-- scss:defaults --*/
+
+// Import Google fonts
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+// Colors
+$mint-cream: #F2F8F6;
+$rose-taupe: #B4647C;
+$jungle-green: #4F8464;
+$blackcurrant: #252B21;
+$green: #8BC19B;
+
+// Base colors
+$body-bg: $mint-cream;
+$body-color: $blackcurrant;
+$link-color: $rose-taupe;
+
+// Navbar (opcional, se usar header fixo)
+$navbar-bg: $green;
+$navbar-fg: $mint-cream;
+$navbar-hl: $rose-taupe;
+
+// Fontes
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Courier Prime', monospace;
+}
+
+body, p, a, li, span {
+  font-family: 'Poppins', sans-serif;
+  color: $body-color;
+  background-color: $body-bg;
+}
+
+// Links
+a {
+  color: $rose-taupe;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: darken($rose-taupe, 10%);
+}
+
+// Post card
+.quarto-grid-item.card {
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: $mint-cream;
+  transition: transform 0.3s ease;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.quarto-grid-item.card:hover {
+  transform: translateY(-4px);
+}
+
+// Título do post
+.card-title.listing-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+// Subtítulo
+.card-subtitle.listing-subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: $blackcurrant;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+// Categorias
+.listing-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.listing-category {
+  background-color: $mint-cream;
+  color: $rose-taupe;
+  border: 1px solid $rose-taupe;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.listing-category:hover {
+  background-color: $rose-taupe;
+  color: $mint-cream;
+}
+
+// Autor e data
+.card-attribution {
+  font-size: 0.8rem;
+  color: $rose-taupe;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+// Ícones
+i {
+  color: $rose-taupe;
+}
+
+.listing-category {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:focus {
+  outline: 2px dashed $rose-taupe;
+  outline-offset: 2px;
+}
