@@ -18,6 +18,11 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: pre-release
+      
+      - name: Configure R repositories
+        run: |
+          Rscript -e 'options(repos = c(ropensci = "https://ropensci.r-universe.dev",
+          CRAN = "https://cloud.r-project.org")); renv::settings$snapshot.type("explicit"); renv::consent(provided = TRUE)'
 
       # install libcurl, needed for curl R package
       # libfribidi-dev libharfbuzz-dev for textshaping
