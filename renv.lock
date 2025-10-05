@@ -13,13 +13,6 @@
     ]
   },
   "Packages": {
-    "babelquarto": {
-      "Package": "babelquarto",
-      "Version": "0.3.2",
-      "Source": "Repository",
-      "Repository": "ropensci",
-      "Hash": "c4ac2c9128b6f9f50b2c86ac66f1e38d"
-    },
     "renv": {
       "Package": "renv",
       "Version": "1.1.5",
