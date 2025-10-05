@@ -50,6 +50,11 @@ jobs:
         run: |
           Rscript -e 'options(repos = c(ropensci = "https://ropensci.r-universe.dev",
           CRAN = "https://cloud.r-project.org")); renv::settings$snapshot.type("explicit"); renv::consent(provided = TRUE)'
+      
+      - name: Install babelquarto
+        run: |
+    Rscript -e 'install.packages("babelquarto", repos=c("https://ropensci.r-universe.dev","https://cloud.r-project.org"))'
+
 
       - name: Render book
         run: Rscript -e 'babelquarto::render_website()'
