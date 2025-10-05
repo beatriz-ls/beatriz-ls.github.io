@@ -45,7 +45,6 @@ jobs:
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
-        run: Rscript -e 'renv::restore(prompt = FALSE)'
 
       - name: Render book
         run: Rscript -e 'babelquarto::render_website()'
