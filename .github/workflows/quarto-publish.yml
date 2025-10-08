@@ -41,11 +41,7 @@ jobs:
         with:
           r-version: '4.3.2'
 
-      - name: Install R Dependencies
-        uses: r-lib/actions/setup-renv@v2
-        with:
-          cache-version: 1
-          
+      - name: Instalar dependências com renv
         run: |
           Rscript -e 'install.packages("renv", repos = "https://cloud.r-project.org")'
           Rscript -e 'renv::restore(prompt = FALSE)'
