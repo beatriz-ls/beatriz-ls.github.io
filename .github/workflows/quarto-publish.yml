@@ -45,10 +45,11 @@ jobs:
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
-      - name: Install babelquarto
-        run: |
-          Rscript -e 'install.packages("babelquarto", repos=c("https://ropensci.r-universe.dev","https://cloud.r-project.org"))'
           
+        run: |
+          Rscript -e 'install.packages("renv", repos = "https://cloud.r-project.org")'
+          Rscript -e 'renv::restore(prompt = FALSE)'
+        
       - name: Render book
         run: Rscript -e 'babelquarto::render_website()'
         
