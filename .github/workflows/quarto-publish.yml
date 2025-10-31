@@ -28,11 +28,23 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             libcurl4-openssl-dev \
+            libssl-dev \
+            libxml2-dev \
+            libfontconfig1-dev \
+            libfreetype6-dev \
             libfribidi-dev \
             libharfbuzz-dev \
+            libpng-dev \
+            libtiff5-dev \
+            libjpeg-dev \
+            libwebp-dev \
             libxslt1-dev \
-            libfontconfig1-dev \
-            libfreetype6-dev
+            zlib1g-dev \
+            libbz2-dev \
+            liblzma-dev \
+            libpcre2-dev \
+            make \
+            cmake
 
       - name: Install R
         uses: r-lib/actions/setup-r@v2
