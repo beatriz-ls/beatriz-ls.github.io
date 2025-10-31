@@ -1371,7 +1371,6 @@
         "jsonlite",
         "openssl",
         "purrr",
-        "ragg",
         "rlang",
         "rmarkdown",
         "tibble",
@@ -1501,17 +1500,6 @@
         "yaml"
       ],
       "Hash": "af456d7a181750812bd8b2bfedb3ea4e"
-    },
-    "ragg": {
-      "Package": "ragg",
-      "Version": "1.3.3",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "systemfonts",
-        "textshaping"
-      ],
-      "Hash": "0595fe5e47357111f29ad19101c7d271"
     },
     "rappdirs": {
       "Package": "rappdirs",
@@ -1902,7 +1890,6 @@
         "modelr",
         "pillar",
         "purrr",
-        "ragg",
         "readr",
         "readxl",
         "reprex",
