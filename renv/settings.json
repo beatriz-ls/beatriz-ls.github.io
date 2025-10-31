@@ -1,7 +1,13 @@
 {
-  "bioconductor.version": null,
+  "bioconductor.version": [],
   "external.libraries": [],
-  "ignored.packages": [],
+  "ignored.packages": [
+    "jsonlite",
+    "rlang",
+    "languageserver",
+    "reprex",
+    "mdlincoln/docthis"
+  ],
   "package.dependency.fields": [
     "Imports",
     "Depends",
@@ -9,8 +15,8 @@
   ],
   "ppm.enabled": null,
   "ppm.ignored.urls": [],
-  "r.version": null,
-  "snapshot.type": "explicit",
+  "r.version": [],
+  "snapshot.type": "implicit",
   "use.cache": true,
   "vcs.ignore.cellar": true,
   "vcs.ignore.library": true,
