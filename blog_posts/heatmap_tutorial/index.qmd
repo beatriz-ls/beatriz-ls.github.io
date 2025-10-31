@@ -1,9 +1,0 @@
----
-title: "Heatmaps in R"
-author: "Beatriz Lima Silveira"
-date: "2025-06-26"
-categories: [news]
-image: "thumbnail.png"
-lang: pt
-#theme: "bea_blog_theme.scss"
----

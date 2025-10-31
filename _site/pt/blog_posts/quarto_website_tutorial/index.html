@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt">
-<head>
-<link rel="alternate" hreflang="en" href="/blog_posts/quarto_website_tutorial/index.html" />
-<link rel="alternate" hreflang="pt" href="/pt/blog_posts/quarto_website_tutorial/index.pt.html" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.7.32">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Beatriz Lima Silveira">
+
 <title>Como eu criei meu website usando Quarto – Beatriz Lima</title>
 <style>
 code{white-space: pre-wrap;}
@@ -21,49 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script><script src="../../site_libs/quarto-nav/headroom.min.js"></script><script src="../../site_libs/clipboard/clipboard.min.js"></script><script src="../../site_libs/quarto-search/autocomplete.umd.js"></script><script src="../../site_libs/quarto-search/fuse.min.js"></script><script src="../../site_libs/quarto-search/quarto-search.js"></script><meta name="quarto:offset" content="../../">
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
 <link href="../../images/lemon_icon.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script><script src="../../site_libs/quarto-html/popper.min.js"></script><script src="../../site_libs/quarto-html/tippy.umd.min.js"></script><script src="../../site_libs/quarto-html/anchor.min.js"></script><link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script><link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-787db52a40bc6e0e710ca10138f469b2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-7a1f7ae9da5b3198832bfeed51894387.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -91,14 +69,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Procurar"
   }
 }</script>
+
+
 </head>
-<body class="nav-fixed fullcontent">
+
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../images/lemon_icon.png" alt="" class="navbar-logo"></a>
+    <img src="../../images/lemon_icon.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Beatriz Lima</span>
     </a>
@@ -109,10 +93,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-<li class="nav-item"><div class="dropdown" id="languages-links-parent">
-<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="languages-button"><i class="bi bi-globe2"></i> Português</button><ul class="dropdown-menu" id="languages-links"><li><a class="dropdown-item" href="/blog_posts/quarto_website_tutorial/index.html" id="language-link-en">English</a></li></ul>
-</div></li>
-<li class="nav-item compact">
+  <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/beatriz-ls"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
@@ -128,8 +109,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-<ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">Sobre Mim</span></a>
   </li>  
@@ -145,8 +126,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cv" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">CV</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-cv">
-<li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-cv">    
+        <li>
     <a class="dropdown-item" href="../../assets/CV_Beatriz_Lima_en.pdf">
  <span class="dropdown-text">English</span></a>
   </li>  
@@ -155,18 +136,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Português</span></a>
   </li>  
     </ul>
-</li>
+  </li>
 </ul>
-</div> <!-- /navcollapse -->
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
 <h1 class="title">Como eu criei meu website usando Quarto</h1>
   <div class="quarto-categories">
     <div class="quarto-category">news</div>
@@ -196,710 +183,251 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="introdução" class="level2"><h2 class="anchored" data-anchor-id="introdução">
-<i class="fa-solid fa-lemon" aria-label="lemon"></i> Introdução</h2>
-<p>Há um tempo, pensava em criar um website para publicar meus projetos e ideias. Como usuária de R, utilizar o <a href="https://quarto.org/">Quarto</a> pareceu a melhor ideia devido à usabilidade desta ferramenta para publicações e renderizações. Além de outras características desejáveis, como a existência de suporte para CSS ou SCSS, a disponibilidade de templates agradáveis e de fácil manipulação, e também a compatibilidade com outras linguagens, como Python (que já programo) e Julia (que espero aprender um dia).</p>
-<p>Dito isso, havia algumas características que eu <strong>queria</strong> que meu website tivesse, como: (1) uma estética agradável e layout intuitivo, (2) suporte multilíngue com um botão para as línguas que falo e estudo, e (3) modo escuro. Também havia algumas características que eu <strong>precisava</strong> que meu website tivesse, como: (1) uma aba para portfólio, (2) um blog com índice organizado, e (3) acesso às minhas redes sociais e ao currículo vitae. Assim, neste blog tutorial, irei explicar como fiz cada etapa e que ferramentas utilizei.</p>
-</section><section id="porque-o-quarto" class="level2"><h2 class="anchored" data-anchor-id="porque-o-quarto">
-<i class="fa-solid fa-circle-question" aria-label="circle-question"></i> Porque o Quarto?</h2>
-<p>Há várias ferramentas baseadas no R que podem ser usados para constriur websites, como <em>{blogdown}</em> e <em>{distill}</em>, entretando escolhi Quarto por sua versatilidade e fácil customização.</p>
-<p>O <em>{blogdown}</em> foi uma das primeiras opções para criação de blog e se baseia no Hugo, um gerador de sites estáticos que oferece uma grande variedade de temas prontos. O <em>{distill}</em> surgiu como uma alternativa com foco acadêmico. Ele produz páginas com visual limpo, ideal para publicações científicas, apresentações de projetos ou relatórios técnicos. Há menos opções de personalização e o projeto não está mais em desenvolvimento ativo.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead><tr class="header">
-<th>Ferramenta</th>
-<th>Ideal para</th>
-<th>Suporte a múltiplas linguagens</th>
-<th>Personalização</th>
-<th>Facilidade de uso</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>blogdown</td>
-<td>Blogs técnicos com Hugo</td>
-<td>Somente R</td>
-<td>Alta</td>
-<td>Média</td>
-</tr>
-<tr class="even">
-<td>distill</td>
-<td>Publicações científicas simples</td>
-<td>Somente R</td>
-<td>Baixa</td>
-<td>Alta</td>
-</tr>
-<tr class="odd">
-<td>Quarto</td>
-<td>Sites, blogs, livros e slides</td>
-<td>R, Python, Julia, Observable</td>
-<td>Alta</td>
-<td>Alta</td>
-</tr>
-</tbody>
-</table></section><section id="passo-1-configurações" class="level2"><h2 class="anchored" data-anchor-id="passo-1-configurações">
-<i class="fa-solid fa-screwdriver-wrench" aria-label="screwdriver-wrench"></i> Passo 1: Configurações</h2>
-<div class="callout callout-style-default callout-important callout-titled" title="Configurações prévias">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Configurações prévias
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li><p><strong>R e RStudio</strong><br>
-Instale o R (<a href="https://cran.r-project.org/">CRAN</a>) e o RStudio (<a href="https://posit.co/download/rstudio-desktop/">RStudio Download</a>).</p></li>
-<li><p><strong>Quarto</strong><br>
-A partir da versão <code>2022.07.1</code> do RStudio, o Quarto já vem incluído.<br>
-Caso contrário, baixe manualmente aqui: <a href="https://quarto.org/docs/get-started">quarto.org/docs/get-started</a></p></li>
-<li><p><strong>Git e GitHub</strong><br>
-Instale o Git em <a href="https://git-scm.com/">git-scm.com</a> e configure-o no terminal.</p></li>
-</ol>
-</div>
-</div>
-<p>No geral, o primeiro passos para criar um blog não é complexo devido ao <a href="https://quarto.org/docs/websites/">guia longo e detalhado</a> que foi criado pelo time que desenvolveu o Quarto.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/page_guide.png" class="img-fluid figure-img"></p>
-<figcaption>Guia do Quarto</figcaption></figure>
-</div>
-<p>Após <a href="https://quarto.org/docs/get-started/">baixar (ou atualizar)</a> o quarto no seu computador, eu sugiro ler em detalhes o guia e também olhar exemplos de blogs/portfolios criados por outras pessoas com o quarto. Eis alguns que indico:</p>
-<ul>
-<li><p>O site da <a href="https://samanthacsik.github.io/">Sam Shanny-Csik</a></p></li>
-<li><p>O site da <a href="https://beamilz.com/">Beatriz Milz</a></p></li>
-<li><p>O site da <a href="https://djnavarro.net/">Danielle Navarro</a></p></li>
-</ul></section><section id="passo-2-criando-um-novo-projeto-de-blog-no-rstudio" class="level2"><h2 class="anchored" data-anchor-id="passo-2-criando-um-novo-projeto-de-blog-no-rstudio">
-<i class="fa-solid fa-file" aria-label="file"></i> Passo 2: Criando um novo projeto de blog no RStudio</h2>
-<p>Abra o RStudio e siga o caminho abaixo:</p>
-<ol type="1">
-<li>Vá em <code>File</code> &gt; <code>New Project</code>…</li>
-</ol>
-<p><img src="images/new_project_page.png" class="center-img img-fluid"></p>
-<ol start="2" type="1">
-<li>Selecione <code>New Directory</code>
-</li>
-</ol>
-<p><img src="images/new_directory_page.png" class="center-img img-fluid"></p>
-<ol start="3" type="1">
-<li>Depois clique em Quarto Blog</li>
-</ol>
-<p><img src="images/quarto_project.png" class="center-img img-fluid"></p>
-<section id="nomeando-e-salvando-seu-blog" class="level3"><h3 class="anchored" data-anchor-id="nomeando-e-salvando-seu-blog">Nomeando e salvando seu blog</h3>
-<p>Agora, preencha os seguintes campos:</p>
-<p><strong>Directory name</strong>: o nome da sua pasta (ex: meu-blog)</p>
-<p>Create project as subdirectory of: escolha onde deseja salvar o projeto no seu computador</p>
-<p>Você também pode marcar a opção Open in new session para abrir o projeto em uma nova aba do RStudio.</p>
-<p>Clique em <strong>Create Project</strong>.</p>
-</section><section id="estrutura-inicial-do-projeto" class="level3"><h3 class="anchored" data-anchor-id="estrutura-inicial-do-projeto">Estrutura inicial do Projeto</h3>
-<p>Assim que você criar o projeto, verá uma estrutura de arquivos semelhante a esta:</p>
-<pre><code>meu-blog/
-├── _quarto.yml
-├── index.qmd
-├── about.qmd
-├── posts/
-│   └── welcome/
-│       └── index.qmd
-└── styles.css</code></pre>
-<ul>
-<li><p><code>_quarto.yml</code>: arquivo de configuração geral do site</p></li>
-<li><p><code>index.qmd</code>: página inicial do blog</p></li>
-<li><p><code>about.qmd</code>: sua página “sobre”</p></li>
-<li><p><code>posts/</code>: pasta com suas postagens (uma subpasta para cada post)</p></li>
-<li><p><code>styles.css</code>: folha de estilo personalizada (cores, fontes, etc.) :::</p></li>
-</ul>
-<p>Após essa etapa, clique em qualquer arquivo <code>.qmd</code>, como o <code>index.qmd</code>, e depois clique no botão Render no canto superior direito do editor para renderizar o arquivo.</p>
-</section></section><section id="passo-3-manipulando-a-estrutura-do-_quarto.yml" class="level2"><h2 class="anchored" data-anchor-id="passo-3-manipulando-a-estrutura-do-_quarto.yml">
-<i class="fa-solid fa-folder-tree" aria-label="folder-tree"></i> Passo 3: Manipulando a estrutura do <code>_quarto.yml</code>
-</h2>
-<p>Nesta etapa, você aprenderá a alterar o título do site, mudar o tema, editar o menu de navegação e configurar os estilos visuais com CSS.</p>
-<section id="arquitetura-do-projeto" class="level3"><h3 class="anchored" data-anchor-id="arquitetura-do-projeto">Arquitetura do projeto</h3>
-<p>Um site em Quarto segue esta estrutura fundamental:</p>
-<ol type="1">
-<li><p><code>arquivos.qmd</code>: Cada página do site (como index.qmd, about.qmd)</p></li>
-<li><p><code>\_quarto.yml</code>: Arquivo principal de configuração</p></li>
-<li><p>Pasta <code>\_site</code>: Gerada automaticamente durante a renderização</p></li>
-<li><p>Recursos estáticos: Imagens, CSS e JS (normalmente em public/ ou images/)</p></li>
-</ol></section><section id="a-importância-do-_quarto.yml" class="level3"><h3 class="anchored" data-anchor-id="a-importância-do-_quarto.yml">A importância do <code>_quarto.yml</code>
-</h3>
-<p>O arquivo <code>_quarto.yml</code> é o <strong>coração da configuração</strong> do seu site. Ele controla <strong>todas</strong> as configurações globais do seu site. Pense nele como o “painel de controle” central.</p>
-<p>Um exemplo de formato de <code>yaml</code>:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>_quarto.yml</strong></pre>
-</div>
-<div class="sourceCode" id="cb2" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span><span class="co">  # Define que é um projeto de website</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">  # Configurações gerais do site</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Título do Site"</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span><span class="co">        # Menu de navegação</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left/right</span><span class="kw">:</span><span class="co">  # Itens alinhados à esquerda/direita</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="at">    ...</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> ...</span><span class="co">   # Aparência visual</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> ...</span><span class="co">     # Personalizações CSS</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled" title="Indentação para o YAML">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Indentação para o YAML
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A indentação no YAML é feita com espaços, não com tabulação. Um erro de espaço pode causar problemas na renderização. Se aparecer uma mensagem de erro do tipo <em>“unexpected indent”</em> ou <em>“mapping values are not allowed here”</em>, verifique os espaços e a formatação do seu <code>\_quarto.yml</code>.</p>
-</div>
-</div>
-<p>Inicialmente, é necessário definir o tipo de projeto como um website na aba de type no project. Na aba <code>navbar</code> é onde se define o menu superior do site. Você pode adicionar links à esquerda (left) ou direita (right). Pode incluir ícones, arquivos <code>.qmd</code>, ou links externos.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Organização do Navbar">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Organização do Navbar
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Estruture seu menu pensando na jornada do usuário, comumente em sites é utilizado o formato:</p>
-<ul>
-<li><p><em>Esquerda:</em> Links principais (sobre, blog, portfólio)</p></li>
-<li><p><em>Direita:</em> Ações secundárias (redes sociais, contato, documentos)</p></li>
-</ul>
-</div>
-</div>
-<p>Cada item no menu que referencia um arquivo <code>.qmd</code> (como <code>about.qmd</code>) corresponde a uma página que deve existir no seu projeto. O Quarto automaticamente converte esses arquivos para HTML, mantém a navegação sincronizada e aplica o tema e estilos definidos.</p>
-<p>Os arquivos .qmd definidos nos “file” dentro dos navbar são as páginas para cada aba definida, sendo então cada página gerada por um arquivo qmd diferente.</p>
-<p>Para meu site, decidi estruturar meu site com quatro páginas principais: uma página inicial (<code>index.qmd</code>) utilizando um template de about page do Quarto como base, uma seção “Sobre Mim” (<code>about.qmd</code>) para compartilhar minhas experiências e objetivos profissionais, uma página de “Portfólio” dedicada aos meus projetos de programação e análise estatística, e uma seção “Blog” (<code>blog.qmd</code>) para publicar tutorais, reflexões e ideias. A página inicial foi desenvolvida a partir dos templates disponíveis na documentação do Quarto neste <a href="https://quarto.org/docs/websites/website-about.html#templates">link</a>.</p>
-<p>No fim,a seção de website do meu arquivo qmd ficou assim:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>_quarto.yml</strong></pre>
-</div>
-<div class="sourceCode" id="cb3" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Beatriz Lima"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">favicon</span><span class="kw">:</span><span class="at"> images/lemon_icon.png</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Beatriz Lima"</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo</span><span class="kw">:</span><span class="at"> images/lemon_icon.png</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">    #logo-alt: "Beatriz Lima"</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> github</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="co"> # link para meu github</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> linkedin</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="co"> # link para meu linkedn</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> envelope</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="co"> # link para meu email</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> about.qmd</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> portfolio.qmd</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> blog.qmd</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> CV</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">menu</span><span class="kw">:</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> English</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">href</span><span class="kw">:</span><span class="co"> # meu curriculo em ingles</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Português</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">href</span><span class="kw">:</span><span class="co"> # meu curriculo em português</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">page-footer</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">background</span><span class="kw">:</span><span class="at"> light</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span><span class="at"> Website build with [Quarto](https://quarto.org/){target=_blank}</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span><span class="at"> Copyright 2024, Beatriz Lima</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="at">    </span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> bea_theme.scss</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> Courier Prime</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fontawesome</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Detalhes de como eu construi a seção de tema e escolhas pessoais de estética como fonte e elemento visuais estará mais explicado na seção sobre customização.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Checklist pós-configuração">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Checklist pós-configuração
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ul class="task-list">
-<li><label><input type="checkbox">Todos os arquivos <code>.qmd</code> referenciados no <code>navbar</code> existem?</label></li>
-<li><label><input type="checkbox">Os links externos (GitHub, LinkedIn, etc.) estão corretos?</label></li>
-<li><label><input type="checkbox">A indentação YAML usa espaços (não tabs)?</label></li>
-<li><label><input type="checkbox">Cada item do menu tem <code>text</code> ou <code>icon</code> + <code>href</code>/<code>file</code>?</label></li>
-</ul>
-</div>
-</div>
-</div>
-</section></section><section id="passo-4-publique-seu-site-com-o-github-pages" class="level2"><h2 class="anchored" data-anchor-id="passo-4-publique-seu-site-com-o-github-pages">
-<i class="fa-solid fa-globe" aria-label="globe"></i> Passo 4: Publique seu site com o Github Pages</h2>
-<p>Deploy (implantação) é o processo de disponibilizar seu site local na internet. Para realizar esse processo com algum projeto do quarto, isso envolve: (1) Renderizar o documento <code>.qmd</code> para <code>HTML</code>, (2) Hospedar os arquivos em um servidos acessível e (3) publicar esse material.</p>
-<p>Existe diversas formas de publicar sites atualmente, após de ter estudado diversas possibilidades acabei decidindo pelo método mais simples e rápido.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Netlify: Uma alternativa para Github Pages">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Netlify: Uma alternativa para Github Pages
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><em>Quando considerar o Netlify?</em></p>
-<p>Um dos diferenciais em relação ao Pages é o sistema de pré-visualizações para cada <strong>Pull Request</strong>, que permite revisar as mudanças em um ambiente isolado antes de mesclá-las à produção. Para projetos que demandam funcionalidades dinâmicas, o Netlify oferece integração nativa com funções serverless, permitindo a criação de APIs simples e processamento de formulários sem a necessidade de configurar um backend complexo.</p>
-<p><em>Vantagens principais:</em></p>
-<ul>
-<li>Deploy contínuo: Integração nativa com GitHub/GitLab</li>
-<li>Previews de PR: Visualize mudanças antes de mergear</li>
-<li>Serverless functions: Execute código backend sem servidor</li>
-<li>Forms handling: Colete dados de formulários sem backend</li>
-<li>Redirects/rewrites: Configuração via <code>_redirects</code> simples</li>
-</ul>
-</div>
-</div>
-</div>
-<section id="configurando-um-repositório" class="level3"><h3 class="anchored" data-anchor-id="configurando-um-repositório">Configurando um repositório</h3>
-<p>Da mesma forma que foi criado um projeto no seu computador, é necessário criar um repositório na sua conta do github para hospedar o seu futuro site. Primeiro, acesse sua conta no GitHub e clique em “New repository”.</p>
-<p>Nomeie o repositório e, se quiser que o site seja acessado diretamente em <code>https://&lt;seu-usuario&gt;.github.io</code>, utilize exatamente este formato como nome do repositório: <code>&lt;seu-usuario&gt;.github.io</code></p>
-<div class="callout callout-style-default callout-note callout-titled" title="Exemplo">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exemplo
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Se seu nome de usuário no GitHub for beatriz-ls, o nome do repositório deve ser beatriz-ls.github.io.</p>
-</div>
-</div>
-<p>Caso use outro nome, o site ficará disponível em: <code>https://&lt;seu-usuario&gt;.github.io/&lt;nome-do-repositorio&gt;</code></p>
-<p>Em seguida:</p>
-<ol type="1">
-<li><p>Marque a opção <strong>“Public”</strong> para tornar o repositório público.</p></li>
-<li><p>Você pode adicionar um <code>README</code> para incluir informações sobre o site.</p></li>
-<li><p>Clique em <strong>“Create repository”</strong>.</p></li>
-</ol>
-<p>Assim, o repositório remoto a próxima estapa é passar o seu projeto quarto para esse repositório.</p>
-</section><section id="inicializando-o-repositório-local-e-conectando-ao-github" class="level3"><h3 class="anchored" data-anchor-id="inicializando-o-repositório-local-e-conectando-ao-github">Inicializando o repositório local e conectando ao GitHub</h3>
-<p>No seu computador, dentro da pasta do projeto do site que você criou com o Quarto, abra o terminal (ou use o terminal do RStudio) e execute os seguintes comandos para iniciar o Git e conectar ao seu repositório no GitHub:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inicialize o repositório Git local</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Adicione todos os arquivos ao controle de versão</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Faça o primeiro commit com uma mensagem descritiva</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Primeiro commit do site Quarto"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Depois, conecte seu projeto local ao repositório remoto que você acabou de criar no GitHub:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Substitua &lt;seu-usuario&gt; e &lt;nome-do-repositorio&gt; conforme o seu caso</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/<span class="op">&lt;</span>seu-usuario<span class="op">&gt;</span>/<span class="op">&lt;</span>nome-do-repositorio<span class="op">&gt;</span>.git</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Por fim, envie os arquivos para o GitHub:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main  <span class="co"># Garante que a branch principal se chame "main"</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section><section id="realizando-o-deploy" class="level3"><h3 class="anchored" data-anchor-id="realizando-o-deploy">Realizando o Deploy</h3>
-<p>O GitHub Pages espera que os arquivos do site estejam dentro de uma pasta chamada <code>docs/</code> no seu repositório, devido a configurações padrões. Por padrão, o Quarto cria uma pasta chamada <code>_site/</code>, mas podemos mudar isso facilmente no arquivo <code>_quarto.yml</code>.</p>
-<p>Abra o arquivo <code>_quarto.yml</code> do seu projeto e adicione (ou ajuste) a seguinte configuração:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>_quarto.yml</strong></pre>
-</div>
-<div class="sourceCode" id="cb7" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span><span class="co">  # GitHub Pages usa esta pasta para exibir o site</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Com isso, toda vez que você rodar o comando quarto render, os arquivos HTML do site serão gerados dentro da pasta <code>docs/</code>, que o GitHub Pages reconhecerá automaticamente para exibição.</p>
-<div class="callout callout-style-default callout-important callout-titled" title="Atenção">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Atenção
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Não apague ou edite manualmente a pasta <code>docs/</code>. Ela será atualizada automaticamente sempre que você renderizar o site com quarto render.</p>
-</div>
-</div>
-<p>Agora que os arquivos do site já estão no GitHub, falta apenas ativar o GitHub Pages:</p>
-<ol type="1">
-<li><p>Acesse o seu repositório no GitHub.</p></li>
-<li><p>Clique em Settings (canto superior direito).</p></li>
-<li><p>No menu lateral, vá até Pages.</p></li>
-<li>
-<p>Em Build and deployment, configure:</p>
-<ul>
-<li><p>Source: Deploy from a branch</p></li>
-<li><p>Branch: main</p></li>
-<li><p>Folder: /docs</p></li>
-</ul>
-</li>
-<li><p>Clique em Save.</p></li>
-</ol>
-<p>Após essa etapa, vai iniciar o processo de deploy.</p>
-</section></section><section id="passo-4-customização-com-scss" class="level2"><h2 class="anchored" data-anchor-id="passo-4-customização-com-scss">
-<i class="fa-solid fa-palette" aria-label="palette"></i> Passo 4: Customização com SCSS</h2>
-<p>O Quarto utiliza o <strong>framework Bootstrap</strong> para definir o visual e o layout dos sites criados.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="O que é um framework?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-O que é um framework?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Um framework é como uma estrutura pronta ou uma caixa de ferramentas que te ajuda a construir algo de forma mais rápida e organizada. Ele oferece componentes, regras e padrões que você pode seguir — economizando tempo e evitando que você tenha que fazer tudo do zero.<br>
-O <strong>Bootstrap</strong> é um framework de front-end. Ele te dá uma base pronta com estilos modernos e responsivos para construir seu site — sem precisar escrever todo o CSS do zero.</p>
-</div>
-</div>
-</div>
-<p><a href="https://getbootstrap.com/">Bootstrap</a> é um dos frameworks front-end popular e que fornece uma base sólida de componentes (como botões, menus, navegação, tabelas, alertas e muito mais) com design responsivos. Visto que o Quarto usa o Bootstrap, é possivel realizar modificações na estética utilizando Bootswach - um projeto que oferece variações de temas visuais para o Bootstrap. Os temas disponíveis estão <a href="https://bootswatch.com/">aqui</a>. Para incluir os temas no seu projeto, modifique o arquivo <code>-quarto.yml</code> na seção de format.</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>_quarto.yml</strong></pre>
-</div>
-<div class="sourceCode" id="cb8" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Dito isso, para a estética do website, é possivel utilizar um dos temas, fazer modificações com css que subrescrevendo algumas áreas do tema, ou, criar um tema completamente novo com css.</p>
-<p>Neste website, foi utilizado um tema completamente novo utilizando scss.</p>
-<section id="o-que-é-scss" class="level3"><h3 class="anchored" data-anchor-id="o-que-é-scss">O que é SCSS?</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/sass_logo.png" class="sass-logo img-fluid figure-img"></p>
-<figcaption>Logo do Sassy CSS</figcaption></figure>
-</div>
-<p>O SCSS (Sassy CSS) é uma sintaxe do pré-processador Sass, que compila para CSS padrão. Ele funciona como uma camada extra de organização sobre o CSS tradicional, permitindo que você escreva códigos de forma mais reutilizável e escalável.</p>
-<p>Algumas das principais diferenciais da utilização do SCSS:</p>
-<ul>
-<li>
-<strong>Criação de variáveis:</strong> É possivel criar variáveis para cores, fontes, espaçamentos etc.</li>
-</ul>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>theme.scss</strong></pre>
-</div>
-<div class="sourceCode" id="cb9" data-filename="theme.scss"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">$cor-principal</span>: <span class="cn">#5b84e7</span><span class="op">;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>body {</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span>: <span class="va">$cor-principal</span><span class="op">;</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li><p><strong>Operações e lógica simples:</strong> como cálculos com unidades (ex: <code>width: 100% / 3;</code>) ou uso de condicionais.</p></li>
-<li><p><strong>Modularização:</strong> você pode dividir seu código em vários arquivos menores e depois juntá-los automaticamente, o que facilita a organização.</p></li>
-</ul>
-<p>Desta forma, escolhi utilizar o SCSS por achar que iria facilitar a minha escrita do código, como uma pessoal que ainda está aprendendo a passos lentos a mexer com CSS e HTML.</p>
-<p>Neste tutorial não irei explicar em detalher como programar com SCSS, mas afirmo que o <a href="https://sass-lang.com/guide/">guia bem feito</a> pelo próprios criadores do Sass foi suficiente para as customizações do meu website especificamente.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/sass_guide.png" class="img-fluid figure-img"></p>
-<figcaption>Guia do Sass</figcaption></figure>
-</div>
-</section><section id="dicas-para-criar-uma-estética-com-scss" class="level3"><h3 class="anchored" data-anchor-id="dicas-para-criar-uma-estética-com-scss">Dicas para criar uma estética com SCSS</h3>
-<p>As necessidades mais importantes são :</p>
-<ol type="1">
-<li>
-<strong>Uma paletta de cores:</strong> Selecione três ou quatro cores que se complementam. Você pode buscar inspiração no Coolors ou no Pinterest;</li>
-<li>
-<strong>Fontes:</strong> Escolha uma fonte para os títulos e outra para o corpo do texto, o Google Fonts é uma ferramenta útil para escolher fontes;</li>
-<li>
-<strong>Elementos visuais (ícones, imagens, símbolos):</strong> Como ícones e simbolos.</li>
-</ol>
-<section id="dica-1-fontes-com-google-fonts" class="level4"><h4 class="anchored" data-anchor-id="dica-1-fontes-com-google-fonts">Dica 1: Fontes com Google Fonts</h4>
-<p>Para importar uma fonte do <a href="https://fonts.google.com/">Google Fonts</a> é só copiar o link de importação do site e incluir no arquivo <code>.scss</code>.</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>theme.scss</strong></pre>
-</div>
-<div class="sourceCode" id="cb10" data-filename="theme.scss"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&amp;display=swap'</span><span class="fu">)</span><span class="op">;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Depois definir a fonte nas seções desejadas:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>theme.scss</strong></pre>
-</div>
-<div class="sourceCode" id="cb11" data-filename="theme.scss"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>body {</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-family</span>: <span class="st">'Quicksand'</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>h1<span class="op">,</span> h2<span class="op">,</span> h3 {</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-family</span>: <span class="st">'Quicksand'</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-weight</span>: <span class="dv">700</span><span class="op">;</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="dica-2-ícones-com-fontawesome" class="level4"><h4 class="anchored" data-anchor-id="dica-2-ícones-com-fontawesome">Dica 2: Ícones com FontAwesome</h4>
-<p>Adicionar ícones ao seu site pode deixá-lo mais visual, dinâmico e informativo. O FontAwesome é uma extensão de fácil download que pode ser utilizado para fezer um site ter mais a sua cara.</p>
-<p>O Quarto oferece uma extensão oficial para FontAwesome. Para instalar, basta rodar o seguinte comando no terminal (ou console do RStudio):</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install extension quarto-ext/fontawesome</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Esse comando irá adicionar uma pasta chamada <code>\_extensions</code> ao seu projeto, contendo os arquivos necessários para utilizar o FontAwesome.</p>
-<p>Depois de instalada a extensão, você pode utilizar os ícones diretamente nos seus arquivos .qmd, de forma bem simples, usando a sintaxe <i class="fa-solid fa-nome-do-ícone" aria-label="nome-do-ícone"></i>.</p>
-<p>A lista completa de ícones disponíveis pode ser vista em: <a href="https://fontawesome.com/icons">Aqui</a></p>
-</section></section></section><section id="passo-extra-website-multilingual" class="level2"><h2 class="anchored" data-anchor-id="passo-extra-website-multilingual">
-<i class="fa-solid fa-language" aria-label="language"></i> Passo Extra: Website Multilingual</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/babelquarto_logo.png" class="img-fluid figure-img"></p>
-<figcaption>Logo do {babelquarto}</figcaption></figure>
-</div>
-<p>Eu tinha o interesse de criar um site que tivesse um botão com capacidade de mudar a lingua, devido ao quarto não possuir suporte para isso, utilizei um pacote chamado <em>{babelquarto}</em> criado por Maëlle Salmon e Pascal Burkhard que serve justamente para esse objetivo. Ele automatiza a gestão de páginas traduzidas, adiciona botões para alternar de idioma e ajuda a manter o conteúdo sincronizado entre as versões.</p>
-<p>Quando comecei a trabalhar no meu site, o {babelquarto} tinha sido lançado a pouco tempo e tinha pouca bibliográfia na internet de como utilizar, então aprender o funcionamento foi realmente um desafio. Entretanto, para a sorte daqueles que estão seguindo esse tutorial, <a href="https://www.joelnitta.com/">Joel Nitta</a>, um contribuidor desse pacote, escreveu um tutorial em inglês mais detalhado de como utilizar esse pacote poucos meses depois de eu ter aplicado no meu site.</p>
-<p>Penso em talvez escrever uma postagem sobre minha experiência utilizando esse pacote, mas ainda para um futuro mais distante.</p>
-</section><section id="considerações-finais" class="level2"><h2 class="anchored" data-anchor-id="considerações-finais">
-<i class="fa-solid fa-face-smile" aria-label="face-smile"></i> Considerações finais</h2>
-<p>Neste post, detalhei os métodos que utilizei para construir meu próprio website e compartilhei as principais fontes e inspirações que me ajudaram a aprender as ferramentas. Apesar de ter sido bastante detalhista, confesso que optei por simplificar alguns tópicos na postagem — como na seção de deploy, em que apresentei um método mais direto em vez de explicar como utilizei o GitHub Actions para automatização. Pretendo escrever um post separado sobre esse tema, que é mais complexo e merece uma atenção especial. Espero que este post funcione não só como um guia, mas também como um incentivo para que você crie seu próprio site, do seu jeito, com as ferramentas que fizerem mais sentido para você.</p>
+</header>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copiada");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copiada");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("\/pt");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+<p>This is the first post in a Quarto blog. Welcome!</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiada");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiada");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("\/pt");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -907,197 +435,177 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>Website build with <a href="https://quarto.org/" target="_blank">Quarto</a></p>
 </div>   
     <div class="nav-footer-center">
-       
+      &nbsp;
     </div>
     <div class="nav-footer-right">
 <p>Copyright 2024, Beatriz Lima</p>
 </div>
   </div>
 </footer>
-</body>
-</html>
+
+
+
+
+</body></html>
