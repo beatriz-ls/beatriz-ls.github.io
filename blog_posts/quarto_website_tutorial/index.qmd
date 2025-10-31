@@ -1,13 +1,58 @@
 ---
 title: "How i created my website with Quarto"
 author: "Beatriz Lima Silveira"
-date: "2024-08-04"
-categories: [tutorial, R, quarto]
-image: "thumbnail.png"
-lang: en
+categories: [R, Quarto, Tutorial, Deploy]
+published: "8/4/2025"
+format:
+  html
+execute: 
+  freeze: auto
+  kernel: R
 ---
 
-This is the first post in a Quarto blog. Welcome!
+![Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.](images/capa.png)
 
+## {{< fa lemon >}} Introduction
 
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
+A while ago, I thought about creating a website to publish my projects and ideas. As an R user, using [Quarto](https://quarto.org/) seemed like the best idea due to this tool's usability for publications and rendering. In addition to other desirable features, such as support for CSS or SCSS, the availability of nice and easily customizable templates, and also compatibility with other languages, like Python (which I already program in) and Julia (which I hope to learn one day).
+
+That said, there were some features that I **wanted** my website to have, such as: (1) a pleasant aesthetic and intuitive layout, (2) multilingual support with a button for the languages I speak and study, and (3) dark mode. There were also some features that I **needed** my website to have, such as: (1) a portfolio section, (2) a blog with an organized index, and (3) access to my social networks and curriculum vitae. So, in this tutorial blog post, I will explain how I did each step and what tools I used.
+
+## {{< fa circle-question >}} Why Quarto?
+
+There are several R-based tools that can be used to build websites, such as **{blogdown}** and **{distill}**, however I chose Quarto for its versatility and easy customization.
+
+**{blogdown}** was one of the first options for blog creation and is based on Hugo, a static site generator that offers a wide variety of ready-made themes. **{distill}** emerged as an alternative with an academic focus. It produces pages with a clean look, ideal for scientific publications, project presentations, or technical reports. It has fewer customization options and the project is no longer under active development.
+
+| Tool | Ideal for | Multi-language Support | Customization | Ease of Use |
+|---------------|---------------|---------------|---------------|---------------|
+| blogdown | Technical blogs with Hugo | R only | High | Medium |
+| distill | Simple scientific publications | R only | Low | High |
+| Quarto | Sites, blogs, books, and slides | R, Python, Julia, Observable | High | High |
+
+## {{< fa screwdriver-wrench >}} Step 1: Setup
+
+::: {.callout-important title="Prerequisites"}
+
+1.  **R e RStudio**\
+    Install R ([CRAN](https://cran.r-project.org/)) and RStudio ([RStudio Download](https://posit.co/download/rstudio-desktop/)).
+
+2.  **Quarto**\
+    Starting from RStudio version `2022.07.1`, Quarto is already included.\
+    Otherwise, download it manually here: [quarto.org/docs/get-started](https://quarto.org/docs/get-started)
+
+3.  **Git e GitHub**\
+    Install Git from [git-scm.com](https://git-scm.com/) and configure it in your terminal.
+:::
+
+Overall, the first steps to creating a blog are not complex due to the [long and detailed guide](https://quarto.org/docs/websites/) created by the team that developed Quarto.
+
+![Quarto's Guide](images/page_guide.png)
+
+After downloading (or updating) Quarto on your computer, I suggest reading the guide in detail and also looking at examples of blogs/portfolios created by other people with Quarto. Here are a few I recommend:
+
+- [Sam Shanny-Csik's site](https://samanthacsik.github.io/)
+
+- [Beatriz Milz's site](https://beamilz.com/)
+
+- [Danielle Navarro's site](https://djnavarro.net/)

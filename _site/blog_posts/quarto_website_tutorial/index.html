@@ -8,7 +8,6 @@
 <meta name="generator" content="quarto-1.6.42">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Beatriz Lima Silveira">
-<meta name="dcterms.date" content="2024-08-04">
 <title>How i created my website with Quarto – Beatriz Lima</title>
 <style>
 code{white-space: pre-wrap;}
@@ -29,6 +28,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script><link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-787db52a40bc6e0e710ca10138f469b2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -134,9 +135,10 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">How i created my website with Quarto</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">tutorial</div>
     <div class="quarto-category">R</div>
-    <div class="quarto-category">quarto</div>
+    <div class="quarto-category">Quarto</div>
+    <div class="quarto-category">Tutorial</div>
+    <div class="quarto-category">Deploy</div>
   </div>
   </div>
 
@@ -151,24 +153,95 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 4, 2024</p>
-    </div>
-  </div>
   
     
   </div>
   
 
 
-</header><p>This is the first post in a Quarto blog. Welcome!</p>
-<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
-
-
-
-</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</header><div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/capa.png" class="img-fluid figure-img"></p>
+<figcaption>Artwork from “Hello, Quarto” keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.</figcaption></figure>
+</div>
+<section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">
+<i class="fa-solid fa-lemon" aria-label="lemon"></i> Introduction</h2>
+<p>A while ago, I thought about creating a website to publish my projects and ideas. As an R user, using <a href="https://quarto.org/">Quarto</a> seemed like the best idea due to this tool’s usability for publications and rendering. In addition to other desirable features, such as support for CSS or SCSS, the availability of nice and easily customizable templates, and also compatibility with other languages, like Python (which I already program in) and Julia (which I hope to learn one day).</p>
+<p>That said, there were some features that I <strong>wanted</strong> my website to have, such as: (1) a pleasant aesthetic and intuitive layout, (2) multilingual support with a button for the languages I speak and study, and (3) dark mode. There were also some features that I <strong>needed</strong> my website to have, such as: (1) a portfolio section, (2) a blog with an organized index, and (3) access to my social networks and curriculum vitae. So, in this tutorial blog post, I will explain how I did each step and what tools I used.</p>
+<p>##<i class="fa-solid fa-circle-question" aria-label="circle-question"></i> Why Quarto?</p>
+<p>There are several R-based tools that can be used to build websites, such as <strong>{blogdown}</strong> and <strong>{distill}</strong>, however I chose Quarto for its versatility and easy customization.</p>
+<p><strong>{blogdown}</strong> was one of the first options for blog creation and is based on Hugo, a static site generator that offers a wide variety of ready-made themes. <strong>{distill}</strong> emerged as an alternative with an academic focus. It produces pages with a clean look, ideal for scientific publications, project presentations, or technical reports. It has fewer customization options and the project is no longer under active development.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead><tr class="header">
+<th>Tool</th>
+<th>Ideal for</th>
+<th>Multi-language Support</th>
+<th>Customization</th>
+<th>Ease of Use</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>blogdown</td>
+<td>Technical blogs with Hugo</td>
+<td>R only</td>
+<td>High</td>
+<td>Medium</td>
+</tr>
+<tr class="even">
+<td>distill</td>
+<td>Simple scientific publications</td>
+<td>R only</td>
+<td>Low</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>Quarto</td>
+<td>Sites, blogs, books, and slides</td>
+<td>R, Python, Julia, Observable</td>
+<td>High</td>
+<td>High</td>
+</tr>
+</tbody>
+</table></section><section id="step-1-setup" class="level2"><h2 class="anchored" data-anchor-id="step-1-setup">
+<i class="fa-solid fa-screwdriver-wrench" aria-label="screwdriver-wrench"></i> Step 1: Setup</h2>
+<div class="callout callout-style-default callout-important callout-titled" title="Prerequisites">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Prerequisites
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p><strong>R e RStudio</strong><br>
+Install R (<a href="https://cran.r-project.org/">CRAN</a>) and RStudio (<a href="https://posit.co/download/rstudio-desktop/">RStudio Download</a>).</p></li>
+<li><p><strong>Quarto</strong><br>
+Starting from RStudio version <code>2022.07.1</code>, Quarto is already included.<br>
+Otherwise, download it manually here: <a href="https://quarto.org/docs/get-started">quarto.org/docs/get-started</a></p></li>
+<li><p><strong>Git e GitHub</strong><br>
+Install Git from <a href="https://git-scm.com/">git-scm.com</a> and configure it in your terminal.</p></li>
+</ol>
+</div>
+</div>
+<p>Overall, the first steps to creating a blog are not complex due to the <a href="https://quarto.org/docs/websites/">long and detailed guide</a> created by the team that developed Quarto.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/page_guide.png" class="img-fluid figure-img"></p>
+<figcaption>Quarto’s Guide</figcaption></figure>
+</div>
+<p>After downloading (or updating) Quarto on your computer, I suggest reading the guide in detail and also looking at examples of blogs/portfolios created by other people with Quarto. Here are a few I recommend:</p>
+<ul>
+<li><p><a href="https://samanthacsik.github.io/">Sam Shanny-Csik’s site</a></p></li>
+<li><p><a href="https://beamilz.com/">Beatriz Milz’s site</a></p></li>
+<li><p><a href="https://djnavarro.net/">Danielle Navarro’s site</a></p></li>
+</ul></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
